@@ -1,5 +1,5 @@
-0.0.2 / February 27 2016
-=======================
+0.0.2 & 0.0.3 / February 27 2016
+================================
 
   * Protect from server side rendering errors
 
