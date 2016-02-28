@@ -4,6 +4,7 @@ import React from 'react';
 
 import ComponentDemo from './component-demo';
 import DecoratorDemo from './decorator-demo';
+import ToggleDecoratorDemo from './toggle-decorator-demo';
 
 /**
  * App component.
@@ -16,6 +17,7 @@ export default function App(): ReactElement {
 
       <ComponentDemo />
       <DecoratorDemo />
+      <ToggleDecoratorDemo />
     </div>
   );
 }

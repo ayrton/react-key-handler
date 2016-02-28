@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import KeyHandler, {M} from '../../../lib';
+import KeyHandler, {S} from '../../../lib';
 
 /**
  * Types.
@@ -32,11 +32,11 @@ export default class ComponentDemo extends React.Component {
 
     return (
       <div>
-        <KeyHandler keyCode={M} onKeyHandle={this.toggleMenu} />
+        <KeyHandler keyCode={S} onKeyHandle={this.toggleMenu} />
 
         <h2>Component</h2>
 
-        <p>Press 'M' to toggle the menu</p>
+        <p>Press 'S' to toggle the menu</p>
 
         {showMenu &&
           <ol>

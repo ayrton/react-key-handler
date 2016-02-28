@@ -6,9 +6,9 @@ React component to handle key events.
 
 ## Usage
 
-`react-key-handler` comes in 2 flavours, a component and a decorator.
+`react-key-handler` comes in 2 flavours, a component and decorators.
 
-Unless you want absolute flexibility we highly recommend you to use the decorator.
+Unless you want absolute flexibility we highly recommend you to use one of the decorators.
 
 ### `keyHandler` decorator
 
@@ -34,6 +34,9 @@ export default keyHandler({keyCode: S})(DecoratorDemo);
 
 `keyHandler` accepts one argument, an object with key `keyCode` and value any given
 [keyboard code](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode).
+
+If you're looking for key toggling use the `toggleKeyHandler` decorator, it has
+the same API as the `keyHandler` decorator.
 
 ### `KeyHandler` component
 
