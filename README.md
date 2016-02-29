@@ -32,8 +32,16 @@ function DecoratorDemo({keyCode}) {
 export default keyHandler({keyCode: S})(DecoratorDemo);
 ```
 
-`keyHandler` accepts one argument, an object with key `keyCode` and value any given
-[keyboard code](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode).
+The prop types of the `keyHandler` decorator are:
+
+```js
+type Props = {
+  keyCode: number,
+  keyEventName: ?string,
+}
+```
+
+`keyCode` can be any given [keyboard code](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode).
 
 If you're looking for key toggling use the `toggleKeyHandler` decorator, it has
 the same API as the `keyHandler` decorator.
@@ -74,7 +82,7 @@ export default React.createClass({
 });
 ```
 
-The props types of the `KeyHandler` component are:
+The prop types of the `KeyHandler` component are:
 
 ```js
 type Props = {
