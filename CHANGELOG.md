@@ -1,3 +1,8 @@
+0.1.0 / Unreleased
+==================
+
+* [feature] Add decorators
+
 0.0.4 / February 27 2016
 ========================
 
