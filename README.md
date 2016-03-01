@@ -44,8 +44,10 @@ type Props = {
 * `keyCode` can be any given [keyboard code](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode).
 * `keyEventName` will default to `'keyup'`.
 
-If you're looking for key toggling use the `toggleKeyHandler` decorator, it has
-the same API as the `keyHandler` decorator.
+### `toggleKeyHandler` decorator
+
+This decorator has the exact same API as the `keyHandler` decorator and should be used
+for when you're looking to toggle a key.
 
 ### `KeyHandler` component
 
