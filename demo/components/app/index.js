@@ -15,9 +15,9 @@ export default function App(): ReactElement {
     <div>
       <h1>react-key-handler</h1>
 
-      <ComponentDemo />
       <DecoratorDemo />
       <ToggleDecoratorDemo />
+      <ComponentDemo />
     </div>
   );
 }

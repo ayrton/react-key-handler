@@ -23,7 +23,7 @@ function DecoratorDemo({keyCode}: Props) {
     <div>
       <h2>Toggle Decorator</h2>
 
-      <p>Press 'S' to toggle the menu</p>
+      <p>Press <code>s</code> to <strong>toggle</strong> the menu.</p>
 
       {keyCode === S &&
         <ol>

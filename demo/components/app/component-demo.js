@@ -36,7 +36,7 @@ export default class ComponentDemo extends React.Component {
 
         <h2>Component</h2>
 
-        <p>Press 'S' to toggle the menu</p>
+        <p>Press <code>s</code> to <strong>toggle</strong> the menu.</p>
 
         {showMenu &&
           <ol>
