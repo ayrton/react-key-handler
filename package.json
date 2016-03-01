@@ -2,7 +2,7 @@
   "name": "react-key-handler",
   "version": "0.0.4",
   "description": "React component to handle key events",
-  "homepage": "https://github.com/producthunt/react-key-handler",
+  "homepage": "https://github.com/ayrton/react-key-handler",
   "author": {
     "name": "Ayrton De Craene",
     "email": "im@ayrton.be",
@@ -11,10 +11,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/producthunt/react-key-handler.git"
+    "url": "git://github.com/ayrton/react-key-handler.git"
   },
   "bugs": {
-    "url": "https://github.com/producthunt/react-key-handler/issues"
+    "url": "https://github.com/ayrton/react-key-handler/issues"
   },
   "main": "dist/index.js",
   "scripts": {
