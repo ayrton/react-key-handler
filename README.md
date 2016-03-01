@@ -4,9 +4,27 @@
 
 React component to handle key events.
 
+## Table of Contents
+
+1. [Installation](#installation)
+1. [Usage](#usage)
+  1. [`keyHandler` decorator](#keyhandler-decorator)
+  1. [`keyToggleHandler` decorator](#keytogglehandler-decorator)
+  1. [`KeyHandler` component](#keyhandler-component)
+  1. [Demos](#demos)
+1. [Development](#development)
+1. [Contributing](#contributing)
+1. [License](#license)
+
+## Installation
+
+```sh
+$ npm install react-key-handler --save
+```
+
 ## Usage
 
-`react-key-handler` comes in 2 flavours, a component and decorators.
+`react-key-handler` comes in 2 flavors, a component and decorators.
 
 Unless you want absolute flexibility we highly recommend you to use one of the decorators.
 
@@ -44,7 +62,7 @@ type Props = {
 * `keyCode` can be any given [keyboard code](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode).
 * `keyEventName` will default to `'keyup'`.
 
-### `toggleKeyHandler` decorator
+### `keyToggleHandler` decorator
 
 This decorator has the exact same API as the `keyHandler` decorator and should be used
 for when you're looking to toggle a key.
@@ -53,11 +71,11 @@ for when you're looking to toggle a key.
 
 ```jsx
 import React from 'react';
-import KeyHandler, {M} from 'react-key-handler';
+import KeyHandler, {S} from 'react-key-handler';
 
 export default React.createClass({
   getInitialState() {
-    return { showMenu: false };
+    return {showMenu: false};
   },
 
   render() {
@@ -65,7 +83,7 @@ export default React.createClass({
 
     return (
       <div>
-        <KeyHandler keyCode={M} onKeyHandle={this.toggleMenu} />
+        <KeyHandler keyCode={S} onKeyHandle={this.toggleMenu} />
 
         {showMenu &&
           <ol>
@@ -80,7 +98,7 @@ export default React.createClass({
   toggleMenu(event) {
     event.preventDefault();
 
-    this.setState({ showMenu: !this.state.showMenu });
+    this.setState({showMenu: !this.state.showMenu});
   },
 });
 ```
@@ -97,13 +115,21 @@ type Props = {
 
 `keyEventName` will default to `'keyup'`.
 
-## Installation
+### Demos
+
+For more examples have a look at `demo/components/demos/`.
+
+## Development
+
+### Setup
 
 ```sh
+$ git clone <this repo>
+$ cd react-key-handler
 $ npm install
 ```
 
-## Development
+### Getting started
 
 To start the server:
 
@@ -117,7 +143,7 @@ This starts a webpack-dev-server, which is a little node.js Express server:
 $ open http://localhost:8080
 ```
 
-## Tests
+### Tests
 
 To run all tests:
 
