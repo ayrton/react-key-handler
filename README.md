@@ -14,7 +14,7 @@ React component to handle key events.
   1. [Demos](#demos)
 1. [Development](#development)
 1. [Contributing](#contributing)
-1. [Licence](#licence)
+1. [License](#license)
 
 ## Installation
 
@@ -24,7 +24,7 @@ $ npm install react-key-handler --save
 
 ## Usage
 
-`react-key-handler` comes in 2 flavours, a component and decorators.
+`react-key-handler` comes in 2 flavors, a component and decorators.
 
 Unless you want absolute flexibility we highly recommend you to use one of the decorators.
 
