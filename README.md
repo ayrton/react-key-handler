@@ -4,6 +4,23 @@
 
 React component to handle key events.
 
+## Table of Contents
+
+1. [Installation](#installation)
+1. [Usage](#usage)
+  1. [`keyHandler` decorator](#keyhandler-decorator)
+  1. [`toggleKeyHandler` decorator](#togglekeyhandler-decorator)
+  1. [`KeyHandler` component](#keyhandler-component)
+1. [Development](#development)
+1. [Contributing](#contributing)
+1. [Licence](#licence)
+
+## Installation
+
+```sh
+$ npm install react-key-handler --save
+```
+
 ## Usage
 
 `react-key-handler` comes in 2 flavours, a component and decorators.
@@ -97,13 +114,17 @@ type Props = {
 
 `keyEventName` will default to `'keyup'`.
 
-## Installation
+## Development
+
+### Setup
 
 ```sh
+$ git clone <this repo>
+$ cd react-key-handler
 $ npm install
 ```
 
-## Development
+### Getting started
 
 To start the server:
 
@@ -117,7 +138,7 @@ This starts a webpack-dev-server, which is a little node.js Express server:
 $ open http://localhost:8080
 ```
 
-## Tests
+### Tests
 
 To run all tests:
 
