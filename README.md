@@ -9,8 +9,9 @@ React component to handle key events.
 1. [Installation](#installation)
 1. [Usage](#usage)
   1. [`keyHandler` decorator](#keyhandler-decorator)
-  1. [`toggleKeyHandler` decorator](#togglekeyhandler-decorator)
+  1. [`keyToggleHandler` decorator](#keytogglehandler-decorator)
   1. [`KeyHandler` component](#keyhandler-component)
+  1. [Demos](#demos)
 1. [Development](#development)
 1. [Contributing](#contributing)
 1. [Licence](#licence)
@@ -61,7 +62,7 @@ type Props = {
 * `keyCode` can be any given [keyboard code](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode).
 * `keyEventName` will default to `'keyup'`.
 
-### `toggleKeyHandler` decorator
+### `keyToggleHandler` decorator
 
 This decorator has the exact same API as the `keyHandler` decorator and should be used
 for when you're looking to toggle a key.
@@ -70,11 +71,11 @@ for when you're looking to toggle a key.
 
 ```jsx
 import React from 'react';
-import KeyHandler, {M} from 'react-key-handler';
+import KeyHandler, {S} from 'react-key-handler';
 
 export default React.createClass({
   getInitialState() {
-    return { showMenu: false };
+    return {showMenu: false};
   },
 
   render() {
@@ -82,7 +83,7 @@ export default React.createClass({
 
     return (
       <div>
-        <KeyHandler keyCode={M} onKeyHandle={this.toggleMenu} />
+        <KeyHandler keyCode={S} onKeyHandle={this.toggleMenu} />
 
         {showMenu &&
           <ol>
@@ -97,7 +98,7 @@ export default React.createClass({
   toggleMenu(event) {
     event.preventDefault();
 
-    this.setState({ showMenu: !this.state.showMenu });
+    this.setState({showMenu: !this.state.showMenu});
   },
 });
 ```
@@ -113,6 +114,10 @@ type Props = {
 ```
 
 `keyEventName` will default to `'keyup'`.
+
+### Demos
+
+For more examples have a look at `demo/components/demos/`.
 
 ## Development
 
