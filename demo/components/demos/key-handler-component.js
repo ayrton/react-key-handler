@@ -4,21 +4,11 @@ import React from 'react';
 
 import KeyHandler, {S} from '../../../lib';
 
-/**
- * Types.
- */
-
 type State = {
   showMenu: boolean,
 };
 
-/**
- * ComponentDemo component.
- *
- * A demo to show how to use the component.
- */
-
-export default class ComponentDemo extends React.Component {
+export default class Demo extends React.Component {
   state: State = { showMenu: false };
 
   constructor(props: void): void {

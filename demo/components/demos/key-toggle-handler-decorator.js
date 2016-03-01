@@ -4,21 +4,11 @@ import React from 'react';
 
 import {keyToggleHandler, S} from '../../../lib';
 
-/**
- * Types.
- */
-
 type Props = {
   keyCode: ?number,
 };
 
-/**
- * ToggleDecoratorDemo component.
- *
- * A demo to show how to use the toggle decorator.
- */
-
-function DecoratorDemo({keyCode}: Props) {
+function Demo({keyCode}: Props) {
   return (
     <div>
       <h2>Toggle Decorator</h2>
@@ -35,8 +25,4 @@ function DecoratorDemo({keyCode}: Props) {
   );
 }
 
-/**
- * ToggleDecoratorDemo container.
- */
-
-export default keyToggleHandler({keyCode: S})(DecoratorDemo);
+export default keyToggleHandler({keyCode: S})(Demo);
