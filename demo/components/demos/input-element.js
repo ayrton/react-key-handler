@@ -2,13 +2,15 @@
 
 import React from 'react';
 
-import {keyToggleHandler, S} from '../../../lib';
+import {keyToggleHandler} from '../../../lib';
 
 type Props = {
-  keyCode: ?number,
+  keyName: ?string,
 };
 
-function Demo({keyCode}: Props): ReactElement {
+const S = 's';
+
+function Demo({keyName}: Props): ReactElement {
   return (
     <div>
       <h2>Input</h2>
@@ -20,11 +22,11 @@ function Demo({keyCode}: Props): ReactElement {
 
       <input />
 
-      {keyCode === S &&
+      {keyName === S &&
         <p>Pressed <code>s</code></p>
       }
     </div>
   );
 }
 
-export default keyToggleHandler({keyCode: S})(Demo);
+export default keyToggleHandler({keyName: S})(Demo);

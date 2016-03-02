@@ -31,14 +31,19 @@ Unless you want absolute flexibility we highly recommend you to use one of the d
 
 ### `keyHandler` decorator
 
+The decorator will decorate the given component with a `keyCode` and `keyName`
+property.
+
 ```jsx
 import React from 'react';
-import {keyHandler, S} from 'react-key-handler';
+import {keyHandler} from 'react-key-handler';
+
+const S_KEY_CODE = 77;
 
 function DecoratorDemo({keyCode}) {
   return (
     <div>
-      {keyCode === S &&
+      {keyCode === S_KEY_CODE &&
         <ol>
           <li>hello</li>
           <li>world</li>
@@ -48,20 +53,24 @@ function DecoratorDemo({keyCode}) {
   );
 }
 
-export default keyHandler({keyCode: S})(DecoratorDemo);
+export default keyHandler({keyCode: S_KEY_CODE})(DecoratorDemo);
 ```
 
 The prop types of the `keyHandler` decorator are:
 
 ```js
 type Props = {
-  keyCode: number,
+  keyCode: ?number,
   keyEventName: ?string,
+  keyName: ?string,
 }
 ```
 
 * `keyCode` can be any given [keyboard code](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode)
 * `keyEventName` will default to `'keyup'`
+* `keyName` can be any given character
+
+You should either pass a `keyCode` or a `keyName`, not both.
 
 ### `keyToggleHandler` decorator
 
@@ -72,7 +81,9 @@ for when you're looking to toggle a key.
 
 ```jsx
 import React from 'react';
-import KeyHandler, {S} from 'react-key-handler';
+import KeyHandler from 'react-key-handler';
+
+const S_KEY_CODE = 77;
 
 export default React.createClass({
   getInitialState() {
@@ -84,7 +95,7 @@ export default React.createClass({
 
     return (
       <div>
-        <KeyHandler keyCode={S} onKeyHandle={this.toggleMenu} />
+        <KeyHandler keyCode={S_KEY_CODE} onKeyHandle={this.toggleMenu} />
 
         {showMenu &&
           <ol>
@@ -108,15 +119,19 @@ The prop types of the `KeyHandler` component are:
 
 ```js
 type Props = {
+  keyCode: ?number,
   keyEventName: string,
-  keyCode: number,
+  keyName: ?string,
   onKeyHandle: Function,
 };
 ```
 
 * `keyCode` can be any given [keyboard code](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode)
 * `keyEventName` will default to `'keyup'`
+* `keyName` can be any given character
 * `onKeyHandle` is the function that is being called when key code is handled
+
+You should either pass a `keyCode` or a `keyName`, not both.
 
 ### Form key handling
 

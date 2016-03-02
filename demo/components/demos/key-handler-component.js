@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import KeyHandler, {S} from '../../../lib';
+import KeyHandler from '../../../lib';
 
 type State = {
   showMenu: boolean,
@@ -22,7 +22,7 @@ export default class Demo extends React.Component {
 
     return (
       <div>
-        <KeyHandler keyCode={S} onKeyHandle={this.toggleMenu} />
+        <KeyHandler keyName="s" onKeyHandle={this.toggleMenu} />
 
         <h2>Component</h2>
 

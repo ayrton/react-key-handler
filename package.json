@@ -64,6 +64,7 @@
     "react": "^0.14.0"
   },
   "dependencies": {
-    "exenv": "^1.2.0"
+    "exenv": "^1.2.0",
+    "keycodes": "^0.2.3"
   }
 }
