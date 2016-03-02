@@ -19683,15 +19683,19 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _keyHandlerComponent = __webpack_require__(160);
+	var _inputElement = __webpack_require__(160);
+
+	var _inputElement2 = _interopRequireDefault(_inputElement);
+
+	var _keyHandlerComponent = __webpack_require__(167);
 
 	var _keyHandlerComponent2 = _interopRequireDefault(_keyHandlerComponent);
 
-	var _keyHandlerDecorator = __webpack_require__(166);
+	var _keyHandlerDecorator = __webpack_require__(168);
 
 	var _keyHandlerDecorator2 = _interopRequireDefault(_keyHandlerDecorator);
 
-	var _keyToggleHandlerDecorator = __webpack_require__(167);
+	var _keyToggleHandlerDecorator = __webpack_require__(169);
 
 	var _keyToggleHandlerDecorator2 = _interopRequireDefault(_keyToggleHandlerDecorator);
 
@@ -19712,7 +19716,8 @@
 	    ),
 	    _react2.default.createElement(_keyHandlerDecorator2.default, null),
 	    _react2.default.createElement(_keyToggleHandlerDecorator2.default, null),
-	    _react2.default.createElement(_keyHandlerComponent2.default, null)
+	    _react2.default.createElement(_keyHandlerComponent2.default, null),
+	    _react2.default.createElement(_inputElement2.default, null)
 	  );
 	}
 
@@ -19726,110 +19731,53 @@
 	  value: true
 	});
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
 
 	var _lib = __webpack_require__(161);
 
-	var _lib2 = _interopRequireDefault(_lib);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	var S = 's';
 
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	function Demo(_ref) {
+	  var keyName = _ref.keyName;
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	/**
-	 * ComponentDemo component.
-	 *
-	 * A demo to show how to use the component.
-	 */
-
-	/**
-	 * Types.
-	 */
-
-	var ComponentDemo = function (_React$Component) {
-	  _inherits(ComponentDemo, _React$Component);
-
-	  function ComponentDemo(props) {
-	    _classCallCheck(this, ComponentDemo);
-
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ComponentDemo).call(this, props));
-
-	    _this.state = { showMenu: false };
-
-
-	    _this.toggleMenu = _this.toggleMenu.bind(_this);
-	    return _this;
-	  }
-
-	  _createClass(ComponentDemo, [{
-	    key: 'render',
-	    value: function render() {
-	      var showMenu = this.state.showMenu;
-
-
-	      return _react2.default.createElement(
-	        'div',
+	  return _react2.default.createElement(
+	    'div',
+	    null,
+	    _react2.default.createElement(
+	      'h2',
+	      null,
+	      'Input'
+	    ),
+	    _react2.default.createElement(
+	      'p',
+	      null,
+	      'Press ',
+	      _react2.default.createElement(
+	        'code',
 	        null,
-	        _react2.default.createElement(_lib2.default, { keyCode: _lib.S, onKeyHandle: this.toggleMenu }),
-	        _react2.default.createElement(
-	          'h2',
-	          null,
-	          'Component'
-	        ),
-	        _react2.default.createElement(
-	          'p',
-	          null,
-	          'Press ',
-	          _react2.default.createElement(
-	            'code',
-	            null,
-	            's'
-	          ),
-	          ' to ',
-	          _react2.default.createElement(
-	            'strong',
-	            null,
-	            'toggle'
-	          ),
-	          ' the menu.'
-	        ),
-	        showMenu && _react2.default.createElement(
-	          'ol',
-	          null,
-	          _react2.default.createElement(
-	            'li',
-	            null,
-	            'hello'
-	          ),
-	          _react2.default.createElement(
-	            'li',
-	            null,
-	            'world'
-	          )
-	        )
-	      );
-	    }
-	  }, {
-	    key: 'toggleMenu',
-	    value: function toggleMenu(event) {
-	      event.preventDefault();
+	        's'
+	      ),
+	      ' in the following form component and see that the key is not being handled.'
+	    ),
+	    _react2.default.createElement('input', null),
+	    keyName === S && _react2.default.createElement(
+	      'p',
+	      null,
+	      'Pressed ',
+	      _react2.default.createElement(
+	        'code',
+	        null,
+	        's'
+	      )
+	    )
+	  );
+	}
 
-	      this.setState({ showMenu: !this.state.showMenu });
-	    }
-	  }]);
-
-	  return ComponentDemo;
-	}(_react2.default.Component);
-
-	exports.default = ComponentDemo;
+	exports.default = (0, _lib.keyToggleHandler)({ keyName: S })(Demo);
 
 /***/ },
 /* 161 */
@@ -19856,47 +19804,35 @@
 	exports.keyHandler = keyHandler;
 	exports.keyToggleHandler = keyToggleHandler;
 
-	var _keyEventNames = __webpack_require__(163);
+	var _constants = __webpack_require__(163);
 
-	var _loop = function _loop(_key3) {
-	  if (_key3 === "default") return 'continue';
-	  Object.defineProperty(exports, _key3, {
+	var _loop = function _loop(_key2) {
+	  if (_key2 === "default") return 'continue';
+	  Object.defineProperty(exports, _key2, {
 	    enumerable: true,
 	    get: function get() {
-	      return _keyEventNames[_key3];
+	      return _constants[_key2];
 	    }
 	  });
 	};
 
-	for (var _key3 in _keyEventNames) {
-	  var _ret = _loop(_key3);
+	for (var _key2 in _constants) {
+	  var _ret = _loop(_key2);
 
 	  if (_ret === 'continue') continue;
-	}
-
-	var _keyCodes = __webpack_require__(164);
-
-	var _loop2 = function _loop2(_key4) {
-	  if (_key4 === "default") return 'continue';
-	  Object.defineProperty(exports, _key4, {
-	    enumerable: true,
-	    get: function get() {
-	      return _keyCodes[_key4];
-	    }
-	  });
-	};
-
-	for (var _key4 in _keyCodes) {
-	  var _ret2 = _loop2(_key4);
-
-	  if (_ret2 === 'continue') continue;
 	}
 
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _keycodes = __webpack_require__(164);
+
+	var _keycodes2 = _interopRequireDefault(_keycodes);
+
 	var _exenv = __webpack_require__(165);
+
+	var _utils = __webpack_require__(166);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -19955,7 +19891,20 @@
 	  }, {
 	    key: 'handleKey',
 	    value: function handleKey(event) {
-	      if (event.keyCode !== this.props.keyCode) return;
+	      var keyCode = this.props.keyCode || (0, _keycodes2.default)(this.props.keyName);
+
+	      if (event.keyCode !== keyCode) {
+	        return;
+	      }
+
+	      var target = event.target;
+
+
+	      if (target instanceof window.HTMLElement) {
+	        if ((0, _utils.isInput)(target)) {
+	          return;
+	        }
+	      }
 
 	      this.props.onKeyHandle(event);
 	    }
@@ -19969,7 +19918,7 @@
 	 */
 
 	KeyHandler.defaultProps = {
-	  keyEventName: _keyEventNames.KEYUP
+	  keyEventName: _constants.KEYUP
 	};
 	exports.default = KeyHandler;
 
@@ -19980,6 +19929,7 @@
 
 	function keyHandler(_ref) {
 	  var keyCode = _ref.keyCode;
+	  var keyName = _ref.keyName;
 	  var keyEventName = _ref.keyEventName;
 
 	  return function (component) {
@@ -19991,7 +19941,7 @@
 
 	        var _this2 = _possibleConstructorReturn(this, Object.getPrototypeOf(KeyHandleDecorator).call(this, props));
 
-	        _this2.state = { keyCode: null };
+	        _this2.state = { keyCode: null, keyName: null };
 
 
 	        _this2.handleKey = _this2.handleKey.bind(_this2);
@@ -20004,22 +19954,24 @@
 	          return _react2.default.createElement(
 	            'div',
 	            null,
-	            _react2.default.createElement(KeyHandler, { keyCode: keyCode, keyEventName: keyEventName, onKeyHandle: this.handleKey }),
+	            _react2.default.createElement(KeyHandler, { keyCode: keyCode, keyEventName: keyEventName, keyName: keyName, onKeyHandle: this.handleKey }),
 	            this.renderDecoratedComponent()
 	          );
 	        }
 	      }, {
 	        key: 'renderDecoratedComponent',
 	        value: function renderDecoratedComponent() {
-	          var keyCode = this.state.keyCode;
+	          var _state = this.state;
+	          var keyCode = _state.keyCode;
+	          var keyName = _state.keyName;
 
 
-	          return _react2.default.createElement(component, _extends({}, this.props, { keyCode: keyCode }));
+	          return _react2.default.createElement(component, _extends({}, this.props, { keyCode: keyCode, keyName: keyName }));
 	        }
 	      }, {
 	        key: 'handleKey',
 	        value: function handleKey(event) {
-	          this.setState({ keyCode: event.keyCode });
+	          this.setState({ keyCode: event.keyCode, keyName: (0, _keycodes2.default)(event.keyCode) });
 	        }
 	      }]);
 
@@ -20030,6 +19982,7 @@
 
 	function keyToggleHandler(_ref2) {
 	  var keyCode = _ref2.keyCode;
+	  var keyName = _ref2.keyName;
 	  var keyEventName = _ref2.keyEventName;
 
 	  return function (component) {
@@ -20041,7 +19994,7 @@
 
 	        var _this3 = _possibleConstructorReturn(this, Object.getPrototypeOf(KeyHandleDecorator).call(this, props));
 
-	        _this3.state = { keyCode: null };
+	        _this3.state = { keyCode: null, keyName: null };
 
 
 	        _this3.handleToggleKey = _this3.handleToggleKey.bind(_this3);
@@ -20054,26 +20007,28 @@
 	          return _react2.default.createElement(
 	            'div',
 	            null,
-	            _react2.default.createElement(KeyHandler, { keyCode: keyCode, keyEventName: keyEventName, onKeyHandle: this.handleToggleKey }),
+	            _react2.default.createElement(KeyHandler, { keyCode: keyCode, keyEventName: keyEventName, keyName: keyName, onKeyHandle: this.handleToggleKey }),
 	            this.renderDecoratedComponent()
 	          );
 	        }
 	      }, {
 	        key: 'renderDecoratedComponent',
 	        value: function renderDecoratedComponent() {
-	          var keyCode = this.state.keyCode;
+	          var _state2 = this.state;
+	          var keyCode = _state2.keyCode;
+	          var keyName = _state2.keyName;
 
 
-	          return _react2.default.createElement(component, _extends({}, this.props, { keyCode: keyCode }));
+	          return _react2.default.createElement(component, _extends({}, this.props, { keyCode: keyCode, keyName: keyName }));
 	        }
 	      }, {
 	        key: 'handleToggleKey',
 	        value: function handleToggleKey(event) {
 	          if (this.state.keyCode === event.keyCode) {
-	            return this.setState({ keyCode: null });
+	            return this.setState({ keyCode: null, keyName: null });
 	          }
 
-	          this.setState({ keyCode: event.keyCode });
+	          this.setState({ keyCode: event.keyCode, keyName: (0, _keycodes2.default)(event.keyCode) });
 	        }
 	      }]);
 
@@ -20103,27 +20058,74 @@
 /* 164 */
 /***/ function(module, exports) {
 
-	"use strict";
+	'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	/**
-	 * Key codes.
-	 */
+	var keys = {
+	  ctrl: 17,
+	  control: 17,
+	  alt: 18,
+	  option: 18,
+	  shift: 16,
+	  windows: 91,
+	  command: 91,
+	  esc: 27,
+	  escape: 27,
+	  '`': 192,
+	  '-': 189,
+	  '=': 187,
+	  backspace: 8,
+	  tab: 9,
+	  '\\': 220,
+	  '[': 219,
+	  ']': 221,
+	  ';': 186,
+	  '\'': 222,
+	  enter: 13,
+	  'return': 13,
+	  ',': 188,
+	  '.': 190,
+	  '/': 191,
+	  space: 32,
+	  pause: 19,
+	  'break': 19,
+	  insert: 45,
+	  'delete': 46,
+	  home: 36,
+	  end: 35,
+	  pageup: 33,
+	  pagedown: 34,
+	  left: 37,
+	  up: 38,
+	  right: 39,
+	  down: 40,
+	  capslock: 20,
+	  numlock: 144,
+	  scrolllock: 145
+	};
 
-	var BACKSPACE = exports.BACKSPACE = 8;
-	var DOWN_ARROW = exports.DOWN_ARROW = 40;
-	var ENTER = exports.ENTER = 13;
-	var ESC = exports.ESC = 27;
-	var FORWARD_SLASH = exports.FORWARD_SLASH = 191;
-	var LEFT_ARROW = exports.LEFT_ARROW = 37;
-	var M = exports.M = 77;
-	var QUESTION_MARK = exports.QUESTION_MARK = 63;
-	var RIGHT_ARROW = exports.RIGHT_ARROW = 39;
-	var S = exports.S = 83;
-	var TAB = exports.TAB = 9;
-	var UP_ARROW = exports.UP_ARROW = 38;
+	for (var f = 1; f < 20; f++) {
+	  keys['f' + f] = 111 + f;
+	}
+
+	module.exports = function (input) {
+	  if (typeof input === 'string') return code(input);
+	  if (typeof input === 'number') return key(input);
+	};
+
+	function code(input) {
+	  return keys[input.toLowerCase()] || input.toUpperCase().charCodeAt(0);
+	}
+
+	function key(input) {
+	  for (var k in keys) {
+	    if (keys.hasOwnProperty(k)) {
+	      if (keys[k] === input) return k;
+	    }
+	  }
+
+	  return String.fromCharCode(input).toLowerCase();
+	}
+
 
 /***/ },
 /* 165 */
@@ -20172,6 +20174,138 @@
 
 /***/ },
 /* 166 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.isInput = isInput;
+
+
+	/**
+	 * Check if `given` element is an input or textarea form element.
+	 */
+
+	function isInput(element) {
+	  if (!element) {
+	    return false;
+	  }
+
+	  var tagName = element.tagName;
+
+
+	  return tagName === 'INPUT' || tagName === 'TEXTAREA';
+	}
+
+/***/ },
+/* 167 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _lib = __webpack_require__(161);
+
+	var _lib2 = _interopRequireDefault(_lib);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Demo = function (_React$Component) {
+	  _inherits(Demo, _React$Component);
+
+	  function Demo(props) {
+	    _classCallCheck(this, Demo);
+
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Demo).call(this, props));
+
+	    _this.state = { showMenu: false };
+
+
+	    _this.toggleMenu = _this.toggleMenu.bind(_this);
+	    return _this;
+	  }
+
+	  _createClass(Demo, [{
+	    key: 'render',
+	    value: function render() {
+	      var showMenu = this.state.showMenu;
+
+
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(_lib2.default, { keyName: 's', onKeyHandle: this.toggleMenu }),
+	        _react2.default.createElement(
+	          'h2',
+	          null,
+	          'Component'
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'Press ',
+	          _react2.default.createElement(
+	            'code',
+	            null,
+	            's'
+	          ),
+	          ' to ',
+	          _react2.default.createElement(
+	            'strong',
+	            null,
+	            'toggle'
+	          ),
+	          ' the menu.'
+	        ),
+	        showMenu && _react2.default.createElement(
+	          'ol',
+	          null,
+	          _react2.default.createElement(
+	            'li',
+	            null,
+	            'hello'
+	          ),
+	          _react2.default.createElement(
+	            'li',
+	            null,
+	            'world'
+	          )
+	        )
+	      );
+	    }
+	  }, {
+	    key: 'toggleMenu',
+	    value: function toggleMenu(event) {
+	      event.preventDefault();
+
+	      this.setState({ showMenu: !this.state.showMenu });
+	    }
+	  }]);
+
+	  return Demo;
+	}(_react2.default.Component);
+
+	exports.default = Demo;
+
+/***/ },
+/* 168 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -20188,18 +20322,10 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	/**
-	 * DecoratorDemo component.
-	 *
-	 * A demo to show how to use the decorator.
-	 */
+	var S = 's';
 
-	/**
-	 * Types.
-	 */
-
-	function DecoratorDemo(_ref) {
-	  var keyCode = _ref.keyCode;
+	function Demo(_ref) {
+	  var keyName = _ref.keyName;
 
 	  return _react2.default.createElement(
 	    'div',
@@ -20226,7 +20352,7 @@
 	      ),
 	      ' the menu.'
 	    ),
-	    keyCode === _lib.S && _react2.default.createElement(
+	    keyName === S && _react2.default.createElement(
 	      'ol',
 	      null,
 	      _react2.default.createElement(
@@ -20243,14 +20369,10 @@
 	  );
 	}
 
-	/**
-	 * DecoratorDemo container.
-	 */
-
-	exports.default = (0, _lib.keyHandler)({ keyCode: _lib.S })(DecoratorDemo);
+	exports.default = (0, _lib.keyHandler)({ keyName: S })(Demo);
 
 /***/ },
-/* 167 */
+/* 169 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -20267,18 +20389,10 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	/**
-	 * ToggleDecoratorDemo component.
-	 *
-	 * A demo to show how to use the toggle decorator.
-	 */
+	var S = 's';
 
-	/**
-	 * Types.
-	 */
-
-	function DecoratorDemo(_ref) {
-	  var keyCode = _ref.keyCode;
+	function Demo(_ref) {
+	  var keyName = _ref.keyName;
 
 	  return _react2.default.createElement(
 	    'div',
@@ -20305,7 +20419,7 @@
 	      ),
 	      ' the menu.'
 	    ),
-	    keyCode === _lib.S && _react2.default.createElement(
+	    keyName === S && _react2.default.createElement(
 	      'ol',
 	      null,
 	      _react2.default.createElement(
@@ -20322,11 +20436,7 @@
 	  );
 	}
 
-	/**
-	 * ToggleDecoratorDemo container.
-	 */
-
-	exports.default = (0, _lib.keyToggleHandler)({ keyCode: _lib.S })(DecoratorDemo);
+	exports.default = (0, _lib.keyToggleHandler)({ keyName: S })(Demo);
 
 /***/ }
 /******/ ]);
