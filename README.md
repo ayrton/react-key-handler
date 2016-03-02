@@ -60,8 +60,8 @@ type Props = {
 }
 ```
 
-* `keyCode` can be any given [keyboard code](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode).
-* `keyEventName` will default to `'keyup'`.
+* `keyCode` can be any given [keyboard code](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode)
+* `keyEventName` will default to `'keyup'`
 
 ### `keyToggleHandler` decorator
 
@@ -114,7 +114,9 @@ type Props = {
 };
 ```
 
-`keyEventName` will default to `'keyup'`.
+* `keyCode` can be any given [keyboard code](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode)
+* `keyEventName` will default to `'keyup'`
+* `onKeyHandle` is the function that is being called when key code is handled
 
 ### Form key handling
 

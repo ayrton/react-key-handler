@@ -8,7 +8,7 @@ type Props = {
   keyCode: ?number,
 };
 
-function Demo({keyCode}: Props) {
+function Demo({keyCode}: Props): ReactElement {
   return (
     <div>
       <h2>Decorator</h2>

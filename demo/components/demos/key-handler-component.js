@@ -11,7 +11,7 @@ type State = {
 export default class Demo extends React.Component {
   state: State = { showMenu: false };
 
-  constructor(props: void): void {
+  constructor(props: void) {
     super(props);
 
     this.toggleMenu = this.toggleMenu.bind(this);
@@ -38,7 +38,7 @@ export default class Demo extends React.Component {
     );
   }
 
-  toggleMenu(event: KeyboardEvent) {
+  toggleMenu(event: KeyboardEvent): void {
     event.preventDefault();
 
     this.setState({ showMenu: !this.state.showMenu });
