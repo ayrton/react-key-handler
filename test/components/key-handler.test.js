@@ -29,7 +29,7 @@ describe('KeyHandler', () => {
     expect(handler.calledOnce).to.equal(false);
   });
 
-  it('handler key down events', () => {
+  it('handles key down events', () => {
     const handler = sinon.spy();
     mount(<KeyHandler keyCode={M} keyEventName={KEYDOWN} onKeyHandle={handler} />);
 
