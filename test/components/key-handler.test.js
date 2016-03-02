@@ -20,7 +20,7 @@ describe('KeyHandler', () => {
     expect(handler.calledOnce).to.equal(true);
   });
 
-  it('handles no key up events when no key code match', () => {
+  it('ignores key up events when no key code match', () => {
     const handler = sinon.spy();
     mount(<KeyHandler onKeyHandle={handler} />);
 
