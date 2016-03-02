@@ -1,7 +1,9 @@
-0.1.0 / Unreleased
+0.1.0 / March 2 2016
 ==================
 
 * [feature] Add decorators
+* [feature] Ignore key events in form elements
+* [feature] Key names
 
 0.0.4 / February 27 2016
 ========================
