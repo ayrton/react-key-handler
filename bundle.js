@@ -19712,7 +19712,11 @@
 	    _react2.default.createElement(
 	      'h1',
 	      null,
-	      'react-key-handler'
+	      _react2.default.createElement(
+	        'a',
+	        { href: 'https://github.com/ayrton/react-key-handler', target: '_blank' },
+	        'react-key-handler'
+	      )
 	    ),
 	    _react2.default.createElement(_keyHandlerDecorator2.default, null),
 	    _react2.default.createElement(_keyToggleHandlerDecorator2.default, null),
@@ -19739,8 +19743,6 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var S = 's';
-
 	function Demo(_ref) {
 	  var keyName = _ref.keyName;
 
@@ -19750,7 +19752,7 @@
 	    _react2.default.createElement(
 	      'h2',
 	      null,
-	      'Input'
+	      'Input example:'
 	    ),
 	    _react2.default.createElement(
 	      'p',
@@ -19761,23 +19763,27 @@
 	        null,
 	        's'
 	      ),
-	      ' in the following form component and see that the key is not being handled.'
+	      ' in the following form component and see that the key handle will be ignored.'
 	    ),
 	    _react2.default.createElement('input', null),
-	    keyName === S && _react2.default.createElement(
-	      'p',
+	    keyName === 's' && _react2.default.createElement(
+	      'ol',
 	      null,
-	      'Pressed ',
 	      _react2.default.createElement(
-	        'code',
+	        'li',
 	        null,
-	        's'
+	        'hello'
+	      ),
+	      _react2.default.createElement(
+	        'li',
+	        null,
+	        'world'
 	      )
 	    )
 	  );
 	}
 
-	exports.default = (0, _lib.keyToggleHandler)({ keyName: S })(Demo);
+	exports.default = (0, _lib.keyToggleHandler)({ keyName: 's' })(Demo);
 
 /***/ },
 /* 161 */
@@ -20255,7 +20261,7 @@
 	        _react2.default.createElement(
 	          'h2',
 	          null,
-	          'Component'
+	          'Component example'
 	        ),
 	        _react2.default.createElement(
 	          'p',
@@ -20322,8 +20328,6 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var S = 's';
-
 	function Demo(_ref) {
 	  var keyName = _ref.keyName;
 
@@ -20333,7 +20337,7 @@
 	    _react2.default.createElement(
 	      'h2',
 	      null,
-	      'Decorator'
+	      'Decorator example:'
 	    ),
 	    _react2.default.createElement(
 	      'p',
@@ -20352,7 +20356,7 @@
 	      ),
 	      ' the menu.'
 	    ),
-	    keyName === S && _react2.default.createElement(
+	    keyName === 's' && _react2.default.createElement(
 	      'ol',
 	      null,
 	      _react2.default.createElement(
@@ -20369,7 +20373,7 @@
 	  );
 	}
 
-	exports.default = (0, _lib.keyHandler)({ keyName: S })(Demo);
+	exports.default = (0, _lib.keyHandler)({ keyName: 's' })(Demo);
 
 /***/ },
 /* 169 */
@@ -20389,8 +20393,6 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var S = 's';
-
 	function Demo(_ref) {
 	  var keyName = _ref.keyName;
 
@@ -20400,7 +20402,7 @@
 	    _react2.default.createElement(
 	      'h2',
 	      null,
-	      'Toggle Decorator'
+	      'Toggle Decorator example:'
 	    ),
 	    _react2.default.createElement(
 	      'p',
@@ -20419,7 +20421,7 @@
 	      ),
 	      ' the menu.'
 	    ),
-	    keyName === S && _react2.default.createElement(
+	    keyName === 's' && _react2.default.createElement(
 	      'ol',
 	      null,
 	      _react2.default.createElement(
@@ -20436,7 +20438,7 @@
 	  );
 	}
 
-	exports.default = (0, _lib.keyToggleHandler)({ keyName: S })(Demo);
+	exports.default = (0, _lib.keyToggleHandler)({ keyName: 's' })(Demo);
 
 /***/ }
 /******/ ]);
