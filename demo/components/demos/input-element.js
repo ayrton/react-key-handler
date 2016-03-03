@@ -8,25 +8,26 @@ type Props = {
   keyName: ?string,
 };
 
-const S = 's';
-
 function Demo({keyName}: Props): ReactElement {
   return (
     <div>
-      <h2>Input</h2>
+      <h2>Input example:</h2>
 
       <p>
         Press <code>s</code> in the following form component and see that the key
-        is not being handled.
+        handle will be ignored.
       </p>
 
       <input />
 
-      {keyName === S &&
-        <p>Pressed <code>s</code></p>
+      {keyName === 's' &&
+        <ol>
+          <li>hello</li>
+          <li>world</li>
+        </ol>
       }
     </div>
   );
 }
 
-export default keyToggleHandler({keyName: S})(Demo);
+export default keyToggleHandler({keyName: 's'})(Demo);

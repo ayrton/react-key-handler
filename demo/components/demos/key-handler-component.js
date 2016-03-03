@@ -24,7 +24,7 @@ export default class Demo extends React.Component {
       <div>
         <KeyHandler keyName="s" onKeyHandle={this.toggleMenu} />
 
-        <h2>Component</h2>
+        <h2>Component example</h2>
 
         <p>Press <code>s</code> to <strong>toggle</strong> the menu.</p>
 

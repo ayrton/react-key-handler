@@ -8,16 +8,15 @@ type Props = {
   keyName: ?string,
 };
 
-const S = 's';
 
 function Demo({keyName}: Props): ReactElement {
   return (
     <div>
-      <h2>Decorator</h2>
+      <h2>Decorator example:</h2>
 
       <p>Press <code>s</code> to <strong>open</strong> the menu.</p>
 
-      {keyName === S &&
+      {keyName === 's' &&
         <ol>
           <li>hello</li>
           <li>world</li>
@@ -27,4 +26,4 @@ function Demo({keyName}: Props): ReactElement {
   );
 }
 
-export default keyHandler({keyName: S})(Demo);
+export default keyHandler({keyName: 's'})(Demo);
