@@ -11,7 +11,7 @@ import KeyToggleHandlerDecorator from './demos/key-toggle-handler-decorator';
  * App component.
  */
 
-export default function App(): ReactElement {
+export default function App(): React$Element {
   return (
     <div>
       <h1>

@@ -11,13 +11,15 @@ type State = {
 export default class Demo extends React.Component {
   state: State = { showMenu: false };
 
+  toggleMenu: (event: KeyboardEvent) => void;
+
   constructor(props: void) {
     super(props);
 
     this.toggleMenu = this.toggleMenu.bind(this);
   }
 
-  render(): ReactElement {
+  render(): React$Element {
     const {showMenu} = this.state;
 
     return (
