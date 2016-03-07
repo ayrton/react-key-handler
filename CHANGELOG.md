@@ -1,21 +1,34 @@
-0.1.0 / March 2 2016
-==================
+# Change Log
+
+All notable changes to this project will be documented in this file.
+This project adheres to [Semantic Versioning](http://semver.org/).
+
+## [Unreleased]
+
+* [feature]
+* [bugfix]
+
+## [0.1.0] - 2016-03-02
 
 * [feature] Add decorators
 * [feature] Ignore key events in form elements
 * [feature] Key names
 
-0.0.4 / February 27 2016
-========================
+## [0.0.4] - 2016-02-27
 
 * [bugfix] Use right function to remove the event listener
 
-0.0.2 & 0.0.3 / February 27 2016
-================================
+## [0.0.2] & [0.0.3] - 2016-02-27
 
-  * [bugfix] Protect from server side rendering errors
+* [bugfix] Protect from server side rendering errors
 
-0.0.1 / February 27 2016
-========================
+## [0.0.1] - 2016-02-27
 
-  * Initial implementation
+* Initial implementation
+
+[Unreleased]: https://github.com/ayrton/react-key-handler/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/ayrton/react-key-handler/compare/v0.0.4...v0.1.0
+[0.0.4]: https://github.com/ayrton/react-key-handler/compare/v0.0.3...v0.0.4
+[0.0.3]: https://github.com/ayrton/react-key-handler/compare/v0.0.2...v0.0.3
+[0.0.2]: https://github.com/ayrton/react-key-handler/compare/v0.0.1...v0.0.2
+[0.0.1]: https://github.com/ayrton/react-key-handler/commit/8267e3dc7357bb7fb106f5148e6f9cb9f69ed3b5
