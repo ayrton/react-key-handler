@@ -5,13 +5,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
-* [feature]
+* [feature] Add support for W3C `KeyboardEvent.key` by [@leocavalcante](https://github.com/leocavalcante)
 * [bugfix]
 
 ## [0.1.0] - 2016-03-02
 
 * [feature] Add decorators
-* [feature] Ignore key events in form elements
+* [feature] Ignore key events from form elements
 * [feature] Key names
 
 ## [0.0.4] - 2016-02-27
