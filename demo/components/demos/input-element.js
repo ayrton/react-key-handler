@@ -8,7 +8,7 @@ type Props = {
   keyName: ?string,
 };
 
-function Demo({keyName}: Props): ReactElement {
+function Demo({keyName}: Props): React$Element {
   return (
     <div>
       <h2>Input example:</h2>
