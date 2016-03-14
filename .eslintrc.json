@@ -1,14 +1,13 @@
 {
   "parser": "babel-eslint",
   "rules": {
-    "comma-dangle": [2, "always-multiline"],
-    "flow-vars/define-flow-type": 2,
-    "flow-vars/use-flow-type": 2,
-    "indent": [2, 2],
-    "linebreak-style": [2, "unix"],
-    "quotes": [2, "single"],
-    "react/jsx-uses-react": 2,
-    "semi": [2, "always"]
+    "comma-dangle": ["error", "always-multiline"],
+    "flow-vars/define-flow-type": "error",
+    "flow-vars/use-flow-type": "error",
+    "indent": ["error", 2],
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"]
   },
   "env": {
     "browser": true,
@@ -16,9 +15,14 @@
     "mocha": true,
     "node": true
   },
-  "extends": "eslint:recommended",
-  "ecmaFeatures": {
-    "jsx": true
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true
+    },
+    "ecmaVersion": 6,
+    "sourceType": "module"
   },
   "plugins": [
     "react",
