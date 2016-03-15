@@ -1,7 +1,7 @@
 {
   "name": "react-key-handler",
   "version": "0.1.0",
-  "description": "React component to handle key events",
+  "description": "React component to handle keyboard events",
   "homepage": "https://github.com/ayrton/react-key-handler",
   "author": {
     "name": "Ayrton De Craene",

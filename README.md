@@ -2,7 +2,7 @@
 
 [![npm version](https://img.shields.io/npm/v/react-key-handler.svg)](https://www.npmjs.com/package/react-key-handler) [![License](https://img.shields.io/npm/l/react-key-handler.svg)](https://www.npmjs.com/package/react-key-handler) [![Build Status](https://travis-ci.org/ayrton/react-key-handler.svg?branch=master)](https://travis-ci.org/ayrton/react-key-handler)
 
-React component to handle key events.
+React component to handle keyboard events (such as keyup, keydown & keypress).
 
 ## Table of Contents
 
@@ -31,8 +31,8 @@ You can use `react-key-handler` in two flavours:
 
 Unless you want absolute flexibility we recommend you to use one of the decorators.
 
-NOTE: Both decorators use the `KeyHandler` component internally, for a full understand
-you should check out [the source code](lib/components/key-handler.js).
+Both decorators use the `KeyHandler` component internally, for a full understanding
+you can check out [the implementation](lib/components/key-handler.js).
 
 ### Decorators
 
