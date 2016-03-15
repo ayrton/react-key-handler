@@ -136,13 +136,15 @@ type Props = {
 
 You should either pass a `keyValue`, a `keyCode` or a `keyName`, not both.
 
+[Example](demo/components/examples/component/index.js)
+
 ### Form key handling
 
 This library does not handle key events for form elements such as `<input />` and `<textarea />`.
 
 React does a fine job supporting these already via [keyboard events](https://facebook.github.io/react/docs/events.html#keyboard-events).
 
-[Examples](demo/components/examples/input/).
+[Examples](demo/components/examples/input/)
 
 ## Development
 
