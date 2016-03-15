@@ -11,7 +11,7 @@ React component to handle key events.
   1. [Decorators](#decorators)
   1. [Component](#component)
   1. [Form key handling](#form-key-handling)
-  1. [Key event names](#key-event-names)
+1. [Key event names](#key-event-names)
 1. [Development](#development)
 1. [Contributing](#contributing)
 1. [License](#license)
@@ -24,9 +24,15 @@ $ npm install react-key-handler --save
 
 ## Usage
 
-`react-key-handler` comes in two flavours, a component and decorators.
+You can use `react-key-handler` in two flavours:
+
+- decorator
+- component
 
 Unless you want absolute flexibility we recommend you to use one of the decorators.
+
+NOTE: Both decorators use the `KeyHandler` component internally, for a full understand
+you should check out [the source code](lib/components/key-handler.js).
 
 ### Decorators
 
@@ -135,7 +141,7 @@ React does a fine job supporting these already via [keyboard events](https://fac
 
 [Examples](demo/components/examples/input/)
 
-### Key event names
+## Key event names
 
 TODO: explain the differences between the different key events.
 
