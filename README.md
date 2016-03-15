@@ -12,6 +12,7 @@ React component to handle key events.
   1. [`keyToggleHandler` decorator](#keytogglehandler-decorator)
   1. [`KeyHandler` component](#keyhandler-component)
   1. [Form key handling](#form-key-handling)
+  1. [Key even names](#key-event-names)
 1. [Development](#development)
 1. [Contributing](#contributing)
 1. [License](#license)
@@ -118,23 +119,15 @@ export default React.createClass({
 
 The prop types of the `KeyHandler` component are:
 
-```js
-type Props = {
-  keyValue: ?string,
-  keyCode: ?number,
-  keyEventName: string,
-  keyName: ?string,
-  onKeyHandle: Function,
-};
-```
+| Name         | Type     | Required   | Default   |                                                   |
+| ------------ | -------- | ---------- | --------- | ------------------------------------------------- |
+| keyEventName | string   | yes        | `'keyup'` | `'keydown'`, `'keypress'` or `'keyup'`.           |
+| keyValue     | string   | yes __\*__ |           | Any given [keyboard key]                          |
+| keyCode      | number   | yes __\*__ |           | Any given [keyboard code]                         |
+| keyName      | string   | yes __\*__ |           | Any given character                               |
+| onKeyHandler | function | yes        |           | Function that is called when they key is handled. |
 
-* `keyValue` can be any given [W3C keyboard key value](https://www.w3.org/TR/DOM-Level-3-Events-key/)
-* `keyCode` can be any given [keyboard code](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode)
-* `keyEventName` will default to `'keyup'`
-* `keyName` can be any given character
-* `onKeyHandle` is the function that is being called when key code is handled
-
-You should either pass a `keyValue`, a `keyCode` or a `keyName`, not both.
+__\*__ You should pass only one of these three props: `keyValue`, `keyCode` or `keyName`.
 
 [Example](demo/components/examples/component/index.js)
 
@@ -145,6 +138,10 @@ This library does not handle key events for form elements such as `<input />` an
 React does a fine job supporting these already via [keyboard events](https://facebook.github.io/react/docs/events.html#keyboard-events).
 
 [Examples](demo/components/examples/input/)
+
+### Key event names
+
+TODO: explain the differences between the different key events.
 
 ## Development
 
@@ -204,3 +201,6 @@ to the [Contributor Covenant](http://contributor-covenant.org/) code of conduct.
                 ||----w |
                 ||     ||
 ```
+
+[keyboard key]: https://www.w3.org/TR/DOM-Level-3-Events-key/
+[keyboard code]: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode
