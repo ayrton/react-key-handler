@@ -2,10 +2,11 @@
 
 import React from 'react';
 
-import InputElement from './demos/input-element';
-import KeyHandlerComponent from './demos/key-handler-component';
-import KeyHandlerDecorator from './demos/key-handler-decorator';
-import KeyToggleHandlerDecorator from './demos/key-toggle-handler-decorator';
+import InputElement from './examples/input/default';
+import InputElementKeypress from './examples/input/keypress';
+import KeyHandlerComponent from './examples/component';
+import KeyHandlerDecorator from './examples/decorators/key-handler';
+import KeyToggleHandlerDecorator from './examples/decorators/key-toggle-handler';
 
 /**
  * App component.
@@ -24,6 +25,7 @@ export default function App(): React$Element {
       <KeyToggleHandlerDecorator/>
       <KeyHandlerComponent />
       <InputElement />
+      <InputElementKeypress />
     </div>
   );
 }

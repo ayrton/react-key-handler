@@ -2,17 +2,17 @@
 
 [![npm version](https://img.shields.io/npm/v/react-key-handler.svg)](https://www.npmjs.com/package/react-key-handler) [![License](https://img.shields.io/npm/l/react-key-handler.svg)](https://www.npmjs.com/package/react-key-handler) [![Build Status](https://travis-ci.org/ayrton/react-key-handler.svg?branch=master)](https://travis-ci.org/ayrton/react-key-handler)
 
-React component to handle key events.
+React component to handle keyboard events (such as keyup, keydown & keypress).
 
 ## Table of Contents
 
 1. [Installation](#installation)
 1. [Usage](#usage)
-  1. [`keyHandler` decorator](#keyhandler-decorator)
-  1. [`keyToggleHandler` decorator](#keytogglehandler-decorator)
-  1. [`KeyHandler` component](#keyhandler-component)
+  1. [Decorators](#decorators)
+  1. [Component](#component)
   1. [Form key handling](#form-key-handling)
-  1. [Demos](#demos)
+1. [Key event names](#key-event-names)
+1. [`keyValue`, `keyCode`, `keyName`](#keyvalue-keycode-keyname)
 1. [Development](#development)
 1. [Contributing](#contributing)
 1. [License](#license)
@@ -25,14 +25,27 @@ $ npm install react-key-handler --save
 
 ## Usage
 
-`react-key-handler` comes in 2 flavors, a component and decorators.
+You can use `react-key-handler` in two flavours:
 
-Unless you want absolute flexibility we highly recommend you to use one of the decorators.
+- decorator
+- component
 
-### `keyHandler` decorator
+Unless you want absolute flexibility we recommend you to use one of the decorators.
 
-The decorator will decorate the given component with a `keyValue`, `keyCode` and `keyName`
-property.
+Both decorators use the `KeyHandler` component internally, for a full understanding
+you can check out [the implementation](lib/components/key-handler.js).
+
+### Decorators
+
+This library includes two different decorators:
+
+| Decorator          | Handles     |
+| ------------------ | ----------- |
+| `keyHandler`       | Key changes |
+| `keyToggleHandler` | Key toggles |
+
+Both decorators have the same API and both will decorate the given component with
+a `keyValue`, `keyCode` and `keyName` property.
 
 ```jsx
 import React from 'react';
@@ -56,30 +69,20 @@ function DecoratorDemo({keyCode}) {
 export default keyHandler({keyCode: S_KEY_CODE})(DecoratorDemo);
 ```
 
-The prop types of the `keyHandler` decorator are:
+The prop types of the `KeyHandler` component are:
 
-```js
-type Props = {
-  keyValue: ?string,
-  keyCode: ?number,
-  keyEventName: ?string,
-  keyName: ?string,
-}
-```
+| Name         | Type     | Required   | Default   |                                                   |
+| ------------ | -------- | ---------- | --------- | ------------------------------------------------- |
+| keyEventName | string   | yes        | `'keyup'` | `'keydown'`, `'keypress'` or `'keyup'`.           |
+| keyValue     | string   | yes __\*__ |           | Any given [keyboard key]                          |
+| keyCode      | number   | yes __\*__ |           | Any given [keyboard code]                         |
+| keyName      | string   | yes __\*__ |           | Any given character                               |
 
-* `keyValue` can be any given [W3C keyboard key value](https://www.w3.org/TR/DOM-Level-3-Events-key/)
-* `keyCode` can be any given [keyboard code](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode)
-* `keyEventName` will default to `'keyup'`
-* `keyName` can be any given character
+__\*__ You should pass only one of these three props: `keyValue`, `keyCode` or `keyName`.
 
-You should either pass a `keyValue`, a `keyCode` or a `keyName`, not both.
+[Examples](demo/components/examples/decorators/)
 
-### `keyToggleHandler` decorator
-
-This decorator has the exact same API as the `keyHandler` decorator and should be used
-for when you're looking to toggle a key.
-
-### `KeyHandler` component
+### Component
 
 ```jsx
 import React from 'react';
@@ -119,37 +122,54 @@ export default React.createClass({
 
 The prop types of the `KeyHandler` component are:
 
-```js
-type Props = {
-  keyValue: ?string,
-  keyCode: ?number,
-  keyEventName: string,
-  keyName: ?string,
-  onKeyHandle: Function,
-};
-```
+| Name         | Type     | Required   | Default   |                                                   |
+| ------------ | -------- | ---------- | --------- | ------------------------------------------------- |
+| keyEventName | string   | yes        | `'keyup'` | `'keydown'`, `'keypress'` or `'keyup'`.           |
+| keyValue     | string   | yes __\*__ |           | Any given [KeyboardEvent.keyCode]                 |
+| keyCode      | number   | yes __\*__ |           | Any given [KeyboardEvent.key]                    |
+| keyName      | string   | yes __\*__ |           | Any given character                               |
+| onKeyHandle  | function | yes        |           | Function that is called when they key is handled. |
 
-* `keyValue` can be any given [W3C keyboard key value](https://www.w3.org/TR/DOM-Level-3-Events-key/)
-* `keyCode` can be any given [keyboard code](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode)
-* `keyEventName` will default to `'keyup'`
-* `keyName` can be any given character
-* `onKeyHandle` is the function that is being called when key code is handled
+__\*__ You should pass only one of these three props: `keyValue`, `keyCode` or `keyName`.
 
-You should either pass a `keyValue`, a `keyCode` or a `keyName`, not both.
+[Example](demo/components/examples/component/index.js)
 
 ### Form key handling
 
-This library does not handle any keys coming from an `<input />` or `<textarea />` element.
+This library does not handle key events for form elements such as `<input />` and `<textarea />`.
 
-We recommend you to use react's built in [form events](https://facebook.github.io/react/docs/events.html#form-events)
-for these.
+React does a fine job supporting these already via [keyboard events](https://facebook.github.io/react/docs/events.html#keyboard-events).
 
-If you disagree and feel very strong about this, feel free to open an issue with
-your reasoning and we will consider adding this functionality.
+[Examples](demo/components/examples/input/)
 
-### Demos
+## Key event names
 
-For more examples have a look at `demo/components/demos/`.
+TODO: explain the differences between the different key events.
+
+## `keyValue`, `keyCode`, `keyName`
+
+Originally this library only supported [KeyboardEvent.keyCode], which is what is currently is most supported by browsers these days,
+but this feature has been removed from the Web standards in favour of [KeyboardEvent.key].
+
+We can't use the reserved [key] property, so we picked `keyValue`.
+
+`keyName` was an in-between solution powered by [keycodes] to support human readable strings,
+this property will be deprecated in future versions.
+
+__Browser support:__
+
+Internally we normalize deprecated HTML5 `keyValue` values and translate from legacy `keyCode` values,
+similar to how React does this for their `SyntheticKeyboardEvent`.
+
+Meaning you can safely use any property in any modern browser.
+
+__More information:__
+
+Read the [W3C Working Draft].
+
+__TL;DR__:
+
+Stick to standards, use `keyValue` over `keyCode`, avoid using `keyName`.
 
 ## Development
 
@@ -209,3 +229,9 @@ to the [Contributor Covenant](http://contributor-covenant.org/) code of conduct.
                 ||----w |
                 ||     ||
 ```
+
+[W3C Working Draft]: https://www.w3.org/TR/DOM-Level-3-Events-key/
+[KeyboardEvent.key]: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key
+[KeyboardEvent.keyCode]: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode
+[keycodes]: https://www.npmjs.com/package/keycodes
+[key]: https://facebook.github.io/react/docs/create-fragment.html
