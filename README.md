@@ -12,6 +12,7 @@ React component to handle keyboard events (such as keyup, keydown & keypress).
   1. [Component](#component)
   1. [Form key handling](#form-key-handling)
 1. [Key event names](#key-event-names)
+1. [`keyValue`, `keyCode`, `keyName`](#keyvalue-keycode-keyname)
 1. [Development](#development)
 1. [Contributing](#contributing)
 1. [License](#license)
@@ -124,8 +125,8 @@ The prop types of the `KeyHandler` component are:
 | Name         | Type     | Required   | Default   |                                                   |
 | ------------ | -------- | ---------- | --------- | ------------------------------------------------- |
 | keyEventName | string   | yes        | `'keyup'` | `'keydown'`, `'keypress'` or `'keyup'`.           |
-| keyValue     | string   | yes __\*__ |           | Any given [keyboard key]                          |
-| keyCode      | number   | yes __\*__ |           | Any given [keyboard code]                         |
+| keyValue     | string   | yes __\*__ |           | Any given [KeyboardEvent.keyCode]                 |
+| keyCode      | number   | yes __\*__ |           | Any given [KeyboardEvent.key]                    |
 | keyName      | string   | yes __\*__ |           | Any given character                               |
 | onKeyHandle  | function | yes        |           | Function that is called when they key is handled. |
 
@@ -144,6 +145,31 @@ React does a fine job supporting these already via [keyboard events](https://fac
 ## Key event names
 
 TODO: explain the differences between the different key events.
+
+## `keyValue`, `keyCode`, `keyName`
+
+Originally this library only supported [KeyboardEvent.keyCode], which is what is currently is most supported by browsers these days,
+but this feature has been removed from the Web standards in favour of [KeyboardEvent.key].
+
+We can't use the reserved [key] property, so we picked `keyValue`.
+
+`keyName` was an in-between solution powered by [keycodes] to support human readable strings,
+this property will be deprecated in future versions.
+
+__Browser support:__
+
+Internally we normalize deprecated HTML5 `keyValue` values and translate from legacy `keyCode` values,
+similar to how React does this for their `SyntheticKeyboardEvent`.
+
+Meaning you can safely use any property in any modern browser.
+
+__More information:__
+
+Read the [W3C Working Draft].
+
+__TL;DR__:
+
+Stick to standards, use `keyValue` over `keyCode`, avoid using `keyName`.
 
 ## Development
 
@@ -204,5 +230,8 @@ to the [Contributor Covenant](http://contributor-covenant.org/) code of conduct.
                 ||     ||
 ```
 
-[keyboard key]: https://www.w3.org/TR/DOM-Level-3-Events-key/
-[keyboard code]: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode
+[W3C Working Draft]: https://www.w3.org/TR/DOM-Level-3-Events-key/
+[KeyboardEvent.key]: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key
+[KeyboardEvent.keyCode]: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode
+[keycodes]: https://www.npmjs.com/package/keycodes
+[key]: https://facebook.github.io/react/docs/create-fragment.html
