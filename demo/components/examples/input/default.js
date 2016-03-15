@@ -2,25 +2,25 @@
 
 import React from 'react';
 
-import {keyToggleHandler} from '../../../lib';
+import {keyToggleHandler} from '../../../../lib';
 
 type Props = {
-  keyName: ?string,
+  keyValue: ?string,
 };
 
-function Demo({keyName}: Props): React$Element {
+function Default({keyValue}: Props): React$Element {
   return (
     <div>
       <h2>Input example:</h2>
 
       <p>
         Press <code>s</code> in the following form component and see that the key
-        handle will be ignored.
+        handle will be ignored by default.
       </p>
 
       <input />
 
-      {keyName === 's' &&
+      {keyValue === 's' &&
         <ol>
           <li>hello</li>
           <li>world</li>
@@ -30,4 +30,4 @@ function Demo({keyName}: Props): React$Element {
   );
 }
 
-export default keyToggleHandler({keyName: 's'})(Demo);
+export default keyToggleHandler({keyValue: 's'})(Default);

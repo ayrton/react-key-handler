@@ -12,7 +12,6 @@ React component to handle key events.
   1. [`keyToggleHandler` decorator](#keytogglehandler-decorator)
   1. [`KeyHandler` component](#keyhandler-component)
   1. [Form key handling](#form-key-handling)
-  1. [Demos](#demos)
 1. [Development](#development)
 1. [Contributing](#contributing)
 1. [License](#license)
@@ -139,17 +138,11 @@ You should either pass a `keyValue`, a `keyCode` or a `keyName`, not both.
 
 ### Form key handling
 
-This library does not handle any keys coming from an `<input />` or `<textarea />` element.
+This library does not handle key events for form elements such as `<input />` and `<textarea />`.
 
-We recommend you to use react's built in [form events](https://facebook.github.io/react/docs/events.html#form-events)
-for these.
+React does a fine job supporting these already via [keyboard events](https://facebook.github.io/react/docs/events.html#keyboard-events).
 
-If you disagree and feel very strong about this, feel free to open an issue with
-your reasoning and we will consider adding this functionality.
-
-### Demos
-
-For more examples have a look at `demo/components/demos/`.
+[Examples](demo/components/examples/input/).
 
 ## Development
 
