@@ -127,7 +127,7 @@ The prop types of the `KeyHandler` component are:
 | keyValue     | string   | yes __\*__ |           | Any given [keyboard key]                          |
 | keyCode      | number   | yes __\*__ |           | Any given [keyboard code]                         |
 | keyName      | string   | yes __\*__ |           | Any given character                               |
-| onKeyHandler | function | yes        |           | Function that is called when they key is handled. |
+| onKeyHandle  | function | yes        |           | Function that is called when they key is handled. |
 
 __\*__ You should pass only one of these three props: `keyValue`, `keyCode` or `keyName`.
 
