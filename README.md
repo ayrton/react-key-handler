@@ -8,11 +8,10 @@ React component to handle key events.
 
 1. [Installation](#installation)
 1. [Usage](#usage)
-  1. [`keyHandler` decorator](#keyhandler-decorator)
-  1. [`keyToggleHandler` decorator](#keytogglehandler-decorator)
-  1. [`KeyHandler` component](#keyhandler-component)
+  1. [Decorators](#decorators)
+  1. [Component](#component)
   1. [Form key handling](#form-key-handling)
-  1. [Key even names](#key-event-names)
+  1. [Key event names](#key-event-names)
 1. [Development](#development)
 1. [Contributing](#contributing)
 1. [License](#license)
@@ -25,14 +24,21 @@ $ npm install react-key-handler --save
 
 ## Usage
 
-`react-key-handler` comes in 2 flavors, a component and decorators.
+`react-key-handler` comes in two flavours, a component and decorators.
 
-Unless you want absolute flexibility we highly recommend you to use one of the decorators.
+Unless you want absolute flexibility we recommend you to use one of the decorators.
 
-### `keyHandler` decorator
+### Decorators
 
-The decorator will decorate the given component with a `keyValue`, `keyCode` and `keyName`
-property.
+This library includes two different decorators:
+
+| Decorator          | Handles     |
+| ------------------ | ----------- |
+| `keyHandler`       | Key changes |
+| `keyToggleHandler` | Key toggles |
+
+Both decorators have the same API and both will decorate the given component with
+a `keyValue`, `keyCode` and `keyName` property.
 
 ```jsx
 import React from 'react';
@@ -56,30 +62,20 @@ function DecoratorDemo({keyCode}) {
 export default keyHandler({keyCode: S_KEY_CODE})(DecoratorDemo);
 ```
 
-The prop types of the `keyHandler` decorator are:
+The prop types of the `KeyHandler` component are:
 
-```js
-type Props = {
-  keyValue: ?string,
-  keyCode: ?number,
-  keyEventName: ?string,
-  keyName: ?string,
-}
-```
+| Name         | Type     | Required   | Default   |                                                   |
+| ------------ | -------- | ---------- | --------- | ------------------------------------------------- |
+| keyEventName | string   | yes        | `'keyup'` | `'keydown'`, `'keypress'` or `'keyup'`.           |
+| keyValue     | string   | yes __\*__ |           | Any given [keyboard key]                          |
+| keyCode      | number   | yes __\*__ |           | Any given [keyboard code]                         |
+| keyName      | string   | yes __\*__ |           | Any given character                               |
 
-* `keyValue` can be any given [W3C keyboard key value](https://www.w3.org/TR/DOM-Level-3-Events-key/)
-* `keyCode` can be any given [keyboard code](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode)
-* `keyEventName` will default to `'keyup'`
-* `keyName` can be any given character
+__\*__ You should pass only one of these three props: `keyValue`, `keyCode` or `keyName`.
 
-You should either pass a `keyValue`, a `keyCode` or a `keyName`, not both.
+[Examples](demo/components/examples/decorators/)
 
-### `keyToggleHandler` decorator
-
-This decorator has the exact same API as the `keyHandler` decorator and should be used
-for when you're looking to toggle a key.
-
-### `KeyHandler` component
+### Component
 
 ```jsx
 import React from 'react';

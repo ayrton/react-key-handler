@@ -2,19 +2,18 @@
 
 import React from 'react';
 
-import {keyHandler} from '../../../lib';
+import {keyToggleHandler} from '../../../../lib';
 
 type Props = {
   keyName: ?string,
 };
 
-
 function Demo({keyName}: Props): React$Element {
   return (
     <div>
-      <h2>Decorator example:</h2>
+      <h2>Toggle Decorator example:</h2>
 
-      <p>Press <code>s</code> to <strong>open</strong> the menu.</p>
+      <p>Press <code>s</code> to <strong>toggle</strong> the menu.</p>
 
       {keyName === 's' &&
         <ol>
@@ -26,4 +25,4 @@ function Demo({keyName}: Props): React$Element {
   );
 }
 
-export default keyHandler({keyName: 's'})(Demo);
+export default keyToggleHandler({keyName: 's'})(Demo);
