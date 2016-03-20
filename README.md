@@ -50,14 +50,12 @@ a `keyValue`, `keyCode` and `keyName` property.
 
 ```jsx
 import React from 'react';
-import {keyHandler} from 'react-key-handler';
+import {keyHandler, KEYPRESS} from 'react-key-handler';
 
-const S_KEY_CODE = 83;
-
-function DecoratorDemo({keyCode}) {
+function Demo({ keyValue }) {
   return (
     <div>
-      {keyCode === S_KEY_CODE &&
+      {keyValue === 's' &&
         <ol>
           <li>hello</li>
           <li>world</li>
@@ -67,7 +65,7 @@ function DecoratorDemo({keyCode}) {
   );
 }
 
-export default keyHandler({keyCode: S_KEY_CODE})(DecoratorDemo);
+export default keyHandler({ keyEventName: KEYPRESS, keyValue: 's' })(Demo);
 ```
 
 The prop types of the `KeyHandler` component are:
@@ -87,21 +85,19 @@ __\*__ You should pass only one of these three props: `keyValue`, `keyCode` or `
 
 ```jsx
 import React from 'react';
-import KeyHandler from 'react-key-handler';
-
-const S_KEY_CODE = 83;
+import KeyHandler, {KEYPRESS} from 'react-key-handler';
 
 export default React.createClass({
   getInitialState() {
-    return {showMenu: false};
+    return { showMenu: false };
   },
 
   render() {
-    const {showMenu} = this.state;
+    const { showMenu } = this.state;
 
     return (
       <div>
-        <KeyHandler keyCode={S_KEY_CODE} onKeyHandle={this.toggleMenu} />
+        <KeyHandler keyEventName={KEYPRESS} keyValue="s" onKeyHandle={this.toggleMenu} />
 
         {showMenu &&
           <ol>
@@ -116,7 +112,7 @@ export default React.createClass({
   toggleMenu(event) {
     event.preventDefault();
 
-    this.setState({showMenu: !this.state.showMenu});
+    this.setState({ showMenu: !this.state.showMenu });
   },
 });
 ```

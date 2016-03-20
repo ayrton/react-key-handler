@@ -20,7 +20,7 @@ export default class Component extends React.Component {
   }
 
   render(): React$Element {
-    const {showMenu} = this.state;
+    const { showMenu } = this.state;
 
     return (
       <div>
