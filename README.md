@@ -25,15 +25,16 @@ $ npm install react-key-handler --save
 
 ## Usage
 
-You can use `react-key-handler` in two flavours:
+You can use `react-key-handler` library in two flavours:
 
-- decorator
-- component
+- [decorators](#decorators)
+- [component](#component)
 
-Unless you want absolute flexibility we recommend you to use one of the decorators.
+Unless you want absolute flexibility we recommend you to use a decorator in favour
+of the component.
 
 Both decorators use the `KeyHandler` component internally, for a full understanding
-you can check out [the implementation](lib/components/key-handler.js).
+be sure to checkout out [the implementation](lib/components/key-handler.js).
 
 ### Decorators
 
@@ -73,9 +74,9 @@ The prop types of the `KeyHandler` component are:
 
 | Name         | Type     | Required   | Default   |                                                   |
 | ------------ | -------- | ---------- | --------- | ------------------------------------------------- |
-| keyEventName | string   | yes        | `'keyup'` | `'keydown'`, `'keypress'` or `'keyup'`.           |
-| keyValue     | string   | yes __\*__ |           | Any given [keyboard key]                          |
-| keyCode      | number   | yes __\*__ |           | Any given [keyboard code]                         |
+| keyEventName | string   | yes        | `'keyup'` | `'keydown'`, `'keypress'` or `'keyup'`            |
+| keyValue     | string   | yes __\*__ |           | Any given [KeyboardEvent.keyCode]                 |
+| keyCode      | number   | yes __\*__ |           | Any given [KeyboardEvent.key]                     |
 | keyName      | string   | yes __\*__ |           | Any given character                               |
 
 __\*__ You should pass only one of these three props: `keyValue`, `keyCode` or `keyName`.
@@ -124,9 +125,9 @@ The prop types of the `KeyHandler` component are:
 
 | Name         | Type     | Required   | Default   |                                                   |
 | ------------ | -------- | ---------- | --------- | ------------------------------------------------- |
-| keyEventName | string   | yes        | `'keyup'` | `'keydown'`, `'keypress'` or `'keyup'`.           |
+| keyEventName | string   | yes        | `'keyup'` | `'keydown'`, `'keypress'` or `'keyup'`            |
 | keyValue     | string   | yes __\*__ |           | Any given [KeyboardEvent.keyCode]                 |
-| keyCode      | number   | yes __\*__ |           | Any given [KeyboardEvent.key]                    |
+| keyCode      | number   | yes __\*__ |           | Any given [KeyboardEvent.key]                     |
 | keyName      | string   | yes __\*__ |           | Any given character                               |
 | onKeyHandle  | function | yes        |           | Function that is called when they key is handled. |
 
@@ -148,28 +149,24 @@ TODO: explain the differences between the different key events.
 
 ## `keyValue`, `keyCode`, `keyName`
 
-Originally this library only supported [KeyboardEvent.keyCode], which is what is currently is most supported by browsers these days,
-but this feature has been removed from the Web standards in favour of [KeyboardEvent.key].
+We recommend you to use the new Web standard [KeyboardEvent.key] over the deprecated
+[KeyboardEvent.keyCode].
 
-We can't use the reserved [key] property, so we picked `keyValue`.
+Be cautious not to use the `key` property like the spec suggests, use `keyValue`,
+this is due to [key] being a reserved property in React.
 
 `keyName` was an in-between solution powered by [keycodes] to support human readable strings,
 this property will be deprecated in future versions.
 
 __Browser support:__
 
-Internally we normalize deprecated HTML5 `keyValue` values and translate from legacy `keyCode` values,
+There's no need to worry about browser support because internally we normalize
+deprecated HTML5 `keyValue` values and translate from legacy `keyCode` values,
 similar to how React does this for their `SyntheticKeyboardEvent`.
-
-Meaning you can safely use any property in any modern browser.
 
 __More information:__
 
-Read the [W3C Working Draft].
-
-__TL;DR__:
-
-Stick to standards, use `keyValue` over `keyCode`, avoid using `keyName`.
+[W3C Working Draft].
 
 ## Development
 
