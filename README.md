@@ -52,7 +52,7 @@ a `keyValue`, `keyCode` and `keyName` property.
 import React from 'react';
 import {keyHandler} from 'react-key-handler';
 
-const S_KEY_CODE = 77;
+const S_KEY_CODE = 83;
 
 function DecoratorDemo({keyCode}) {
   return (
@@ -89,7 +89,7 @@ __\*__ You should pass only one of these three props: `keyValue`, `keyCode` or `
 import React from 'react';
 import KeyHandler from 'react-key-handler';
 
-const S_KEY_CODE = 77;
+const S_KEY_CODE = 83;
 
 export default React.createClass({
   getInitialState() {
