@@ -13,7 +13,7 @@ React component to handle keyboard events (such as keyup, keydown & keypress).
 
 1. [Installation](#installation)
 1. [Usage](#usage)
-  1. [Higher-order Components](#decorators)
+  1. [Higher-order Components](#higher-order-components)
   1. [Component](#component)
   1. [Form key handling](#form-key-handling)
 1. [Key event names](#key-event-names)
