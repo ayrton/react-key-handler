@@ -47,10 +47,10 @@ This library includes two similar higher-order components, but with a different 
 | `keyHandler`           | Handles key changes |
 | `keyToggleHandler`     | Handles key toggles |
 
-Both have the same API and will decorate the given component with a `keyValue`, `keyCode` 
+Both have the same API and will decorate the given component with a `keyValue`, `keyCode`
 and `keyName` property.
 
-Internally the `KeyHandler` component is used, for a full understanding be sure to 
+Internally the `KeyHandler` component is used, for a full understanding be sure to
 check out [the implementation](lib/components/key-handler.js).
 
 ```jsx
@@ -75,12 +75,12 @@ export default keyHandler({ keyEventName: KEYPRESS, keyValue: 's' })(Demo);
 
 The prop types of the `KeyHandler` component are:
 
-| Name         | Type     | Required   | Default   |                                                   |
-| ------------ | -------- | ---------- | --------- | ------------------------------------------------- |
-| keyEventName | string   | yes        | `'keyup'` | `'keydown'`, `'keypress'` or `'keyup'`            |
-| keyValue     | string   | yes __\*__ |           | Any given [KeyboardEvent.key]                     |
-| keyCode      | number   | yes __\*__ |           | Any given [KeyboardEvent.keyCode]                 |
-| keyName      | string   | yes __\*__ |           | Any given character                               |
+| Name         | Type     | Required   | Default   |                                        |
+| ------------ | -------- | ---------- | --------- | -------------------------------------- |
+| keyEventName | string   | yes        | `'keyup'` | `'keydown'`, `'keypress'` or `'keyup'` |
+| keyValue     | string   | yes __\*__ |           | Any given [KeyboardEvent.key]          |
+| keyCode      | number   | yes __\*__ |           | Any given [KeyboardEvent.keyCode]      |
+| keyName      | string   | yes __\*__ |           | Any given character                    |
 
 __\*__ You should pass only one of these three props: `keyValue`, `keyCode` or `keyName`.
 
@@ -124,13 +124,13 @@ export default React.createClass({
 
 The prop types of the `KeyHandler` component are:
 
-| Name         | Type     | Required   | Default   |                                                   |
-| ------------ | -------- | ---------- | --------- | ------------------------------------------------- |
-| keyEventName | string   | yes        | `'keyup'` | `'keydown'`, `'keypress'` or `'keyup'`            |
-| keyValue     | string   | yes __\*__ |           | Any given [KeyboardEvent.key]                     |
-| keyCode      | number   | yes __\*__ |           | Any given [KeyboardEvent.keyCode]                 |
-| keyName      | string   | yes __\*__ |           | Any given character                               |
-| onKeyHandle  | function | yes        |           | Function that is called when they key is handled. |
+| Name         | Type     | Required   | Default   |                                                  |
+| ------------ | -------- | ---------- | --------- | ------------------------------------------------ |
+| keyEventName | string   | yes        | `'keyup'` | `'keydown'`, `'keypress'` or `'keyup'`           |
+| keyValue     | string   | yes __\*__ |           | Any given [KeyboardEvent.key]                    |
+| keyCode      | number   | yes __\*__ |           | Any given [KeyboardEvent.keyCode]                |
+| keyName      | string   | yes __\*__ |           | Any given character                              |
+| onKeyHandle  | function | yes        |           | Function that is called when they key is handled |
 
 __\*__ You should pass only one of these three props: `keyValue`, `keyCode` or `keyName`.
 
@@ -157,7 +157,7 @@ Be cautious not to use the `key` property like the spec suggests, use `keyValue`
 this is due to [key] being a reserved property in React.
 
 `keyName` was an in-between solution powered by [keycodes] to support human readable strings,
-this property will be deprecated in future versions.
+this property is deprecated and will be removed in future versions.
 
 __Browser support:__
 
