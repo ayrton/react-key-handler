@@ -88,11 +88,28 @@ describe('KeyHandler', () => {
     expect(handler.calledOnce).to.equal(true);
   });
 
-  it('prioritizes key value over code/name', () => {
+  it('prioritizes key value over code', () => {
     const handler = sinon.spy();
-    mount(<KeyHandler keyCode={M} keyName="m" keyValue={ARROW_LEFT} onKeyHandle={handler} />);
+    mount(<KeyHandler keyCode={M} keyValue={ARROW_LEFT} onKeyHandle={handler} />);
 
-    triggerKeyEvent(KEYUP, S, ARROW_LEFT);
+    triggerKeyEvent(KEYUP, M);
+
+    expect(handler.calledOnce).to.equal(false);
+
+    triggerKeyEvent(KEYUP, undefined, ARROW_LEFT);
+
+    expect(handler.calledOnce).to.equal(true);
+  });
+
+  it('prioritizes key code over name', () => {
+    const handler = sinon.spy();
+    mount(<KeyHandler keyCode={M} keyName="s" onKeyHandle={handler} />);
+
+    triggerKeyEvent(KEYUP, S);
+
+    expect(handler.calledOnce).to.equal(false);
+
+    triggerKeyEvent(KEYUP, M);
 
     expect(handler.calledOnce).to.equal(true);
   });
