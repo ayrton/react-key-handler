@@ -4,6 +4,11 @@
 
 React component to handle keyboard events (such as keyup, keydown & keypress).
 
+## Testimonials
+
+><div>“Happy to see that react-key-handler is SSR safe :+1:”</div>
+>[Veselin Todorov](https://github.com/vesln), Chai.js core
+
 ## Table of Contents
 
 1. [Installation](#installation)
