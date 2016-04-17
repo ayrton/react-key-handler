@@ -2,21 +2,21 @@
 
 import React from 'react';
 
-import {keyHandler} from '../../../../lib';
+import {keyHandler, KEYPRESS} from '../../../../lib';
 
 type Props = {
-  keyName: ?string,
+  keyValue: ?string,
 };
 
 
-function Demo({keyName}: Props): React$Element {
+function Demo({keyValue}: Props): React$Element {
   return (
     <div>
       <h2>Decorator example:</h2>
 
       <p>Press <code>s</code> to <strong>open</strong> the menu.</p>
 
-      {keyName === 's' &&
+      {keyValue === 's' &&
         <ol>
           <li>hello</li>
           <li>world</li>
@@ -26,4 +26,4 @@ function Demo({keyName}: Props): React$Element {
   );
 }
 
-export default keyHandler({keyName: 's'})(Demo);
+export default keyHandler({keyEventName: KEYPRESS, keyValue: 's'})(Demo);
