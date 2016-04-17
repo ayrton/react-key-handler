@@ -1,1 +1,8 @@
 demo/
+lib/
+test/
+.babelrc
+.eslintrc.json
+.flowconfig
+.travis.yml
+webpack*
