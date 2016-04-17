@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import KeyHandler from '../../../../lib';
+import KeyHandler, {KEYPRESS} from '../../../../lib';
 
 type State = {
   showMenu: boolean,
@@ -24,7 +24,7 @@ export default class Component extends React.Component {
 
     return (
       <div>
-        <KeyHandler keyName="s" onKeyHandle={this.toggleMenu} />
+        <KeyHandler keyEventName={KEYPRESS} keyValue="s" onKeyHandle={this.toggleMenu} />
 
         <h2>Component example:</h2>
 
