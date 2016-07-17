@@ -8,7 +8,7 @@ type Props = {
   keyValue: ?string,
 };
 
-function Demo({keyValue}: Props): React$Element {
+function Demo({keyValue}: Props) {
   return (
     <div>
       <h2>Toggle Decorator example:</h2>

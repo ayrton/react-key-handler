@@ -8,7 +8,7 @@ type Props = {
   keyValue: ?string,
 };
 
-function Default({keyValue}: Props): React$Element {
+function Default({keyValue}: Props) {
   return (
     <div>
       <h2>Input example:</h2>

@@ -9,7 +9,7 @@ type Props = {
 };
 
 
-function Demo({keyValue}: Props): React$Element {
+function Demo({keyValue}: Props) {
   return (
     <div>
       <h2>Decorator example:</h2>

@@ -17,7 +17,7 @@ export default class Keypress extends React.Component {
     this.handleKeyPress = this.handleKeyPress.bind(this);
   }
 
-  render(): React$Element {
+  render() {
     return (
       <div>
         <h2>Input onKeyPress example:</h2>

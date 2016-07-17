@@ -19,7 +19,7 @@ export default class Component extends React.Component {
     this.toggleMenu = this.toggleMenu.bind(this);
   }
 
-  render(): React$Element {
+  render() {
     const { showMenu } = this.state;
 
     return (
