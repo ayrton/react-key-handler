@@ -11,14 +11,6 @@ type State = {
 export default class Component extends React.Component {
   state: State = { showMenu: false };
 
-  toggleMenu: (event: KeyboardEvent) => void;
-
-  constructor(props: void) {
-    super(props);
-
-    this.toggleMenu = this.toggleMenu.bind(this);
-  }
-
   render() {
     const { showMenu } = this.state;
 
@@ -40,9 +32,9 @@ export default class Component extends React.Component {
     );
   }
 
-  toggleMenu(event: KeyboardEvent): void {
+  toggleMenu = (event: KeyboardEvent) => {
     event.preventDefault();
 
     this.setState({ showMenu: !this.state.showMenu });
-  }
+  };
 }

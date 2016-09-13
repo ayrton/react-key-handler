@@ -9,14 +9,6 @@ type State = {
 export default class Keypress extends React.Component {
   state: State = { keyValue: null };
 
-  handleKeyPress: (event: SyntheticKeyboardEvent) => void;
-
-  constructor() {
-    super();
-
-    this.handleKeyPress = this.handleKeyPress.bind(this);
-  }
-
   render() {
     return (
       <div>
@@ -38,9 +30,9 @@ export default class Keypress extends React.Component {
     );
   }
 
-  handleKeyPress({key}: SyntheticKeyboardEvent) {
+  handleKeyPress = ({key}: SyntheticKeyboardEvent) => {
     const keyValue = this.state.keyValue === key ? null : key;
 
     this.setState({ keyValue });
-  }
+  };
 }
