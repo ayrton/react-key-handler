@@ -10,8 +10,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [0.3.0] - 2016-09-13
 
-* [feature] Treat content editable elements as inputs. This means the key handle
-will be ignored for events triggered from these elements.
+* [feature] Treat content editable elements as inputs by [@jamesfzhang](https://github.com/jamesfzhang). This means the key handle
+will be ignored for events triggered from these elements. (Draft.js support)
 
 ## [0.2.0] - 2016-04-17
 
