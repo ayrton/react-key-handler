@@ -8,6 +8,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 * [bugfix]
 * [feature]
 
+## [0.3.0] - 2016-09-13
+
+* [feature] Treat content editable elements as inputs. This means the key handle
+will be ignored for events triggered from these elements.
 
 ## [0.2.0] - 2016-04-17
 
@@ -34,7 +38,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 * Initial implementation
 
-[Unreleased]: https://github.com/ayrton/react-key-handler/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/ayrton/react-key-handler/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/ayrton/react-key-handler/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/ayrton/react-key-handler/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/ayrton/react-key-handler/compare/v0.0.4...v0.1.0
 [0.0.4]: https://github.com/ayrton/react-key-handler/compare/v0.0.3...v0.0.4
