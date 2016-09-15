@@ -51,7 +51,7 @@ Both have the same API and will decorate the given component with a `keyValue`
 and `keyCode` property.
 
 Internally the `KeyHandler` component is used, for a full understanding be sure to
-check out [the implementation](lib/components/key-handler.js).
+check out [the implementation](lib/key-handler.js).
 
 ```jsx
 import React from 'react';

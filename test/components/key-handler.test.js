@@ -3,7 +3,7 @@ import sinon from 'sinon';
 import {expect} from 'chai';
 import {mount, render} from 'enzyme';
 
-import KeyHandler, {KEYUP, KEYDOWN} from 'components/key-handler';
+import KeyHandler, {KEYUP, KEYDOWN} from 'key-handler';
 
 const M = 77;
 const S = 83;
