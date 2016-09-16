@@ -81,7 +81,7 @@ The prop types of the `KeyHandler` component are:
 | keyValue     | string   | yes __\*__ |           | Any given [KeyboardEvent.key]          |
 | keyCode      | number   | yes __\*__ |           | Any given [KeyboardEvent.keyCode]      |
 
-__\*__ You should pass only one of these two props: `keyValue` or `keyCode`.
+__\*__ You should pass only one of these two props: `keyValue` or `keyCode`. [Which one do I pick?](#keyvalue-keycode)
 
 [Examples](demo/components/examples/decorators/)
 
@@ -130,7 +130,7 @@ The prop types of the `KeyHandler` component are:
 | keyCode      | number   | yes __\*__ |           | Any given [KeyboardEvent.keyCode]                |
 | onKeyHandle  | function | yes        |           | Function that is called when they key is handled |
 
-__\*__ You should pass only one of these two props: `keyValue` or `keyCode`.
+__\*__ You should pass only one of these two props: `keyValue` or `keyCode`. [Which one do I pick?](#keyvalue-keycode)
 
 [Example](demo/components/examples/component/index.js)
 
