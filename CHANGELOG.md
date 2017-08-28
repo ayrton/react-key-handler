@@ -3,10 +3,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased]
+## [1.0.0] - 2017-08-28
 
-* [bugfix]
-* [feature]
+* [breaking] Drop keyName support
+* [bugfix] Get rid of deprecation warnings
 
 ## [0.3.0] - 2016-09-13
 
@@ -38,7 +38,8 @@ will be ignored for events triggered from these elements. (Draft.js support)
 
 * Initial implementation
 
-[Unreleased]: https://github.com/ayrton/react-key-handler/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/ayrton/react-key-handler/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/ayrton/react-key-handler/compare/v0.3.0...v1.0.0
 [0.3.0]: https://github.com/ayrton/react-key-handler/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/ayrton/react-key-handler/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/ayrton/react-key-handler/compare/v0.0.4...v0.1.0
