@@ -8,6 +8,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 * [bugfix]
 * [feature]
 
+## [1.0.1] - 2017-10-26
+
+* [feature] Loosen react dependency to support React 16
+
 ## [1.0.0] - 2017-08-28
 
 * [breaking] Drop keyName support
@@ -43,7 +47,8 @@ will be ignored for events triggered from these elements. (Draft.js support)
 
 * Initial implementation
 
-[Unreleased]: https://github.com/ayrton/react-key-handler/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/ayrton/react-key-handler/compare/v1.0.1...HEAD
+[1.0.1]: https://github.com/ayrton/react-key-handler/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/ayrton/react-key-handler/compare/v0.3.0...v1.0.0
 [0.3.0]: https://github.com/ayrton/react-key-handler/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/ayrton/react-key-handler/compare/v0.1.0...v0.2.0
