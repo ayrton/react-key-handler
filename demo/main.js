@@ -10,4 +10,5 @@ import App from './components/app';
  */
 
 const root = document.getElementById('app');
+if (!root) throw new Error('No app id in document');
 ReactDOM.render(<App />, root);

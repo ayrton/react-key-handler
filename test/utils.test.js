@@ -1,4 +1,5 @@
 import {expect} from 'chai';
+import {JSDOM} from 'jsdom';
 
 import {isInput, matchesKeyboardEvent, eventKey} from 'utils';
 
@@ -28,9 +29,14 @@ describe('isInput', () => {
   });
 });
 
+const getKeyboardEvent = (eventName: string, opts: {| key?: string, keyCode?: number |}) => {
+  const { window: testWindow } = (new JSDOM('', { runScripts: 'dangerously' }));
+  return new testWindow.KeyboardEvent(eventName, opts);
+};
+
 describe('matchesKeyboardEvent', () => {
   describe('matches KeyboardEvent.key against', () => {
-    const arrowUpValueEvent = new window.KeyboardEvent('keyup', {key: 'ArrowUp'});
+    const arrowUpValueEvent = getKeyboardEvent('keyup', {key: 'ArrowUp'});
 
     it('keyValue Props property', () => {
       expect(matchesKeyboardEvent(arrowUpValueEvent, {keyValue: 'ArrowUp'})).to.be.true;
@@ -44,7 +50,7 @@ describe('matchesKeyboardEvent', () => {
   });
 
   describe('matches KeyboardEvent.keyCode against', () => {
-    const arrowUpCodeEvent = new window.KeyboardEvent('keyup', {keyCode: 38});
+    const arrowUpCodeEvent = getKeyboardEvent('keyup', {keyCode: 38});
 
     it('keyValue Props property', () => {
       expect(matchesKeyboardEvent(arrowUpCodeEvent, {keyValue: 'ArrowUp'})).to.be.true;
@@ -60,37 +66,37 @@ describe('matchesKeyboardEvent', () => {
 
 describe('eventKey', () => {
   it('normalizes keys', () => {
-    const event = new window.KeyboardEvent('keyup', {key: 'Esc'});
+    const event = getKeyboardEvent('keyup', {key: 'Esc'});
     expect(eventKey(event)).to.equal('Escape');
   });
 
   it('returns valid keys', () => {
-    const event = new window.KeyboardEvent('keyup', {key: 'Escape'});
+    const event = getKeyboardEvent('keyup', {key: 'Escape'});
     expect(eventKey(event)).to.equal('Escape');
   });
 
   it('returns Unidentified key', () => {
-    const event = new window.KeyboardEvent('keyup', {key: 'Unidentified'});
+    const event = getKeyboardEvent('keyup', {key: 'Unidentified'});
     expect(eventKey(event)).to.equal('Unidentified');
   });
 
   it('ignores Unidentified key in favor of key codes', () => {
-    const event = new window.KeyboardEvent('keyup', {key: 'Unidentified', keyCode: 38});
+    const event = getKeyboardEvent('keyup', {key: 'Unidentified', keyCode: 38});
     expect(eventKey(event)).to.equal('ArrowUp');
   });
 
   it('translates key codes', () => {
-    const event = new window.KeyboardEvent('keyup', {keyCode: 38});
+    const event = getKeyboardEvent('keyup', {keyCode: 38});
     expect(eventKey(event)).to.equal('ArrowUp');
   });
 
   it('falls back to Unidentified for unknown key code keys', () => {
-    const event = new window.KeyboardEvent('keyup', {keyCode: 1337});
+    const event = getKeyboardEvent('keyup', {keyCode: 1337});
     expect(eventKey(event)).to.equal('Unidentified');
   });
 
   it('supports enter on key press', () => {
-    const event = new window.KeyboardEvent('keypress', {keyCode: 13});
+    const event = getKeyboardEvent('keypress', {keyCode: 13});
     expect(eventKey(event)).to.equal('Enter');
   });
 });

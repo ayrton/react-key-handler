@@ -8,7 +8,7 @@ type State = {
   showMenu: boolean,
 };
 
-export default class Component extends React.Component {
+export default class Component extends React.Component<{||}, State> {
   state: State = { showMenu: false };
 
   render() {

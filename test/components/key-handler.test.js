@@ -2,6 +2,7 @@ import React from 'react';
 import sinon from 'sinon';
 import {expect} from 'chai';
 import {mount, render} from 'enzyme';
+import triggerKeyEvent from './helpers/triggerKeyEvent';
 
 import KeyHandler, {KEYUP, KEYDOWN} from 'key-handler';
 
@@ -83,8 +84,3 @@ describe('KeyHandler', () => {
     expect(handler.calledOnce).to.equal(true);
   });
 });
-
-function triggerKeyEvent(eventName, keyCode, keyValue = undefined) {
-  const event = new window.KeyboardEvent(eventName, { keyCode, key: keyValue });
-  document.dispatchEvent(event);
-}

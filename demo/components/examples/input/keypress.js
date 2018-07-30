@@ -6,7 +6,7 @@ type State = {
   keyValue: ?string,
 };
 
-export default class Keypress extends React.Component {
+export default class Keypress extends React.Component<{||}, State> {
   state: State = { keyValue: null };
 
   render() {
@@ -30,7 +30,7 @@ export default class Keypress extends React.Component {
     );
   }
 
-  handleKeyPress = ({key}: SyntheticKeyboardEvent) => {
+  handleKeyPress = ({key}: SyntheticKeyboardEvent<HTMLInputElement>) => {
     const keyValue = this.state.keyValue === key ? null : key;
 
     this.setState({ keyValue });
