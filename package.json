@@ -53,7 +53,7 @@
     "eslint": "^5.2.0",
     "eslint-plugin-flow-vars": "^0.5.0",
     "eslint-plugin-react": "^7.10.0",
-    "flow-bin": "^0.77.0",
+    "flow-bin": "^0.78.0",
     "flow-copy-source": "^2.0.2",
     "gh-pages": "^1.2.0",
     "jsdom": "^11.12.0",
