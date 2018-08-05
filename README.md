@@ -179,7 +179,7 @@ $ npm install
 To start the server:
 
 ```sh
-$ npm start
+$ npm demo
 ```
 
 This starts a webpack-dev-server, which is a little node.js Express server:
