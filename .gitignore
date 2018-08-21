@@ -1,4 +1,5 @@
 .cache/
+.size-snapshot.json
 dist/
 node_modules/
 npm-debug.log
