@@ -1,16 +1,13 @@
 [ignore]
-.*/fbjs/.*
+.*/node_modules/config-chain/.*
 
 [include]
 
 [libs]
 
+[lints]
+
 [options]
-module.system=node
-module.system.node.resolve_dirname=node_modules
-module.ignore_non_literal_requires=true
-esproposal.class_instance_fields=enable
-esproposal.class_static_fields=enable
 
 [version]
-0.77.0
+0.78.0

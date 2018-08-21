@@ -1,7 +1,7 @@
 import {expect} from 'chai';
 import {JSDOM} from 'jsdom';
 
-import {isInput, matchesKeyboardEvent, eventKey} from 'utils';
+import {isInput, matchesKeyboardEvent, eventKey} from '../lib/utils';
 
 describe('isInput', () => {
   it('returns true if the element is an input', () => {

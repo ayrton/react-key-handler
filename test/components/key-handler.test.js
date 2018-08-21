@@ -4,7 +4,7 @@ import {expect} from 'chai';
 import {mount, render} from 'enzyme';
 import triggerKeyEvent from './helpers/triggerKeyEvent';
 
-import KeyHandler, {KEYUP, KEYDOWN} from 'key-handler';
+import KeyHandler, {KEYUP, KEYDOWN} from '../../lib';
 
 const M = 77;
 const S = 83;
