@@ -8,7 +8,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 * [bugfix]
 * [feature]
 
+## [1.2.0-beta.1] - 2018-08-21
+
+* [feature] Use rollup to bundle up the code
+
 ## [1.1.0] - 2018-07-31
+
+There's a bug in 1.1.0 when SSRing, downgrade to 1.0.1 if applicable
 
 * [feature] Add flow support by [@gforge](https://github.com/gforge)
 * [bugfix] Fallback from `event.keyCode` to `event.which` for browsers such as FireFox when using the `keypress` event name. [@gforge](https://github.com/gforge)
