@@ -14,7 +14,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [1.1.0] - 2018-07-31
 
-There's a bug in 1.1.0 when SSRing, downgrade to 1.0.1 if applicable
+There's a bug in 1.1.0 when SSRing, it is recommended to update to 1.2.0 or downgrade to 1.0.1 if applicable
 
 * [feature] Add flow support by [@gforge](https://github.com/gforge)
 * [bugfix] Fallback from `event.keyCode` to `event.which` for browsers such as FireFox when using the `keypress` event name. [@gforge](https://github.com/gforge)
@@ -59,6 +59,7 @@ will be ignored for events triggered from these elements. (Draft.js support)
 * Initial implementation
 
 [Unreleased]: https://github.com/ayrton/react-key-handler/compare/v1.1.0...HEAD
+[1.2.0-beta.1]: https://github.com/ayrton/react-key-handler/compare/v1.1.0...v1.2.0-beta.1
 [1.1.0]: https://github.com/ayrton/react-key-handler/compare/v1.0.1...v1.1.0
 [1.0.1]: https://github.com/ayrton/react-key-handler/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/ayrton/react-key-handler/compare/v0.3.0...v1.0.0
