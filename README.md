@@ -35,9 +35,6 @@ You can use `react-key-handler` library in two flavours:
 - [higher-order components](#higher-order-components)
 - [component](#component)
 
-Unless you want absolute flexibility we recommend you to use a higher-order component in favour
-of the component.
-
 ### Higher-order Components
 
 This library includes two similar higher-order components, but with a different puprose:
