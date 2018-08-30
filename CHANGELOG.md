@@ -8,6 +8,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - [bugfix]
 - [feature]
 
+## [1.2.0-beta.3] - 2018-08-30
+
+- [feature] Add `code` support by [@gforge](https://github.com/gforge)
+- [deprecate] `keyCode` prop in favour of `code` by [@gforge](https://github.com/gforge)
+- [feature] Allows for `keyValue`, `code` and `keyCode` to come in array format by [@gforge](https://github.com/gforge)
+- [breaking] No longer add a `<div />` wrapper around the `KeyHandler` component, but use `React.Fragment` instead
+
 ## [1.2.0-beta.2] - 2018-08-21
 
 - [bugfix] Pass original props to component we are decorating when using one of the decorators
@@ -63,6 +70,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Initial implementation
 
 [unreleased]: https://github.com/ayrton/react-key-handler/compare/v1.1.0...HEAD
+[1.2.0-beta.3]: https://github.com/ayrton/react-key-handler/compare/v1.2.0-beta.2...v1.2.0-beta.3
 [1.2.0-beta.2]: https://github.com/ayrton/react-key-handler/compare/v1.2.0-beta.1...v1.2.0-beta.2
 [1.2.0-beta.1]: https://github.com/ayrton/react-key-handler/compare/v1.1.0...v1.2.0-beta.1
 [1.1.0]: https://github.com/ayrton/react-key-handler/compare/v1.0.1...v1.1.0
