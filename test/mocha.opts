@@ -1,6 +1,6 @@
 --recursive
 --full-trace
---require @babel/register
+--require babel-core/register
 --require ./test/support/helper.js
 --timeout 5000
 --slow 3000

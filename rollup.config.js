@@ -18,15 +18,15 @@ const babelOptions = {
   exclude: '**/node_modules/**',
   presets: [
     [
-      '@babel/preset-env',
+      'env',
       {
         modules: false,
       },
     ],
-    '@babel/preset-react',
-    '@babel/preset-flow',
+    'react',
+    'stage-1',
   ],
-  plugins: ['@babel/plugin-external-helpers', 'transform-class-properties'],
+  plugins: ['external-helpers', 'transform-class-properties'],
 };
 
 export default [
