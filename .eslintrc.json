@@ -1,5 +1,25 @@
 {
+  "env": {
+    "browser": true,
+    "es6": true,
+    "mocha": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended"
+  ],
   "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true
+    },
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "flow-vars"],
   "rules": {
     "comma-dangle": ["error", "always-multiline"],
     "flow-vars/define-flow-type": "error",
@@ -9,23 +29,10 @@
     "quotes": ["error", "single"],
     "semi": ["error", "always"]
   },
-  "env": {
-    "browser": true,
-    "es6": true,
-    "mocha": true,
-    "node": true
-  },
-  "extends": ["eslint:recommended", "plugin:react/recommended"],
-  "parserOptions": {
-    "ecmaFeatures": {
-      "experimentalObjectRestSpread": true,
-      "jsx": true
-    },
-    "ecmaVersion": 6,
-    "sourceType": "module"
-  },
-  "plugins": [
-    "react",
-    "flow-vars"
-  ]
+  "settings": {
+    "react": {
+      "version": "16.2",
+      "flowVersion": "0.79"
+    }
+  }
 }

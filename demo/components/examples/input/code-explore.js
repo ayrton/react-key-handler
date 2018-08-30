@@ -3,7 +3,7 @@
 import React from 'react';
 import ExampleBox from '../ExampleBox';
 
-type code = {| code: string, value: string |}
+type code = {| code: string, value: string |};
 type State = {
   codes: code[],
 };
@@ -22,32 +22,34 @@ export default class CodeExplore extends React.Component<{||}, State> {
         if (code === undefined) {
           return <li key={i}>...</li>;
         }
-        return <li key={i}>{code.code} =&gt; {code.value}</li>;
+        return (
+          <li key={i}>
+            {code.code} =&gt; {code.value}
+          </li>
+        );
       });
 
     return (
       <ExampleBox>
-        <h2>Input&nbsp;
-          <code>KeyboardEvent</code>&nbsp;
-          <code>.code</code>&nbsp;
-          and <code>.value</code>&nbsp;
-          explore:
+        <h2>
+          Input&nbsp;
+          <code>KeyboardEvent</code>
+          &nbsp;
+          <code>.code</code>
+          &nbsp; and <code>.value</code>
+          &nbsp; explore:
         </h2>
 
         <input onKeyPress={this.handleKeyPress} />
 
-        <p>
-          Last 3 values (code =&gt; value):
-        </p>
-        <ol>
-          {elements}
-        </ol>
+        <p>Last 3 values (code =&gt; value):</p>
+        <ol>{elements}</ol>
       </ExampleBox>
     );
   }
 
   handleKeyPress = (e: SyntheticKeyboardEvent<HTMLInputElement>) => {
-    const {codes} = this.state;
+    const { codes } = this.state;
 
     codes.push({
       // $FlowFixMe

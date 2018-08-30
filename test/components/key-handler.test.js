@@ -1,10 +1,10 @@
 import React from 'react';
 import sinon from 'sinon';
-import {expect} from 'chai';
-import {mount, render} from 'enzyme';
+import { expect } from 'chai';
+import { mount, render } from 'enzyme';
 import triggerKeyEvent from './helpers/triggerKeyEvent';
 
-import KeyHandler, {KEYUP, KEYDOWN} from '../../lib';
+import KeyHandler, { KEYUP, KEYDOWN } from '../../lib';
 
 const M = 77;
 const S = 83;
@@ -28,7 +28,9 @@ describe('KeyHandler', () => {
 
   it('handles more than one key value match', () => {
     const handler = sinon.spy();
-    mount(<KeyHandler keyValue={[ARROW_LEFT, ARROW_RIGHT]} onKeyHandle={handler} />);
+    mount(
+      <KeyHandler keyValue={[ARROW_LEFT, ARROW_RIGHT]} onKeyHandle={handler} />,
+    );
 
     triggerKeyEvent(KEYUP, undefined, ARROW_LEFT);
     triggerKeyEvent(KEYUP, undefined, ARROW_RIGHT);
@@ -75,7 +77,9 @@ describe('KeyHandler', () => {
 
   it('handles key down events', () => {
     const handler = sinon.spy();
-    mount(<KeyHandler keyCode={M} keyEventName={KEYDOWN} onKeyHandle={handler} />);
+    mount(
+      <KeyHandler keyCode={M} keyEventName={KEYDOWN} onKeyHandle={handler} />,
+    );
 
     triggerKeyEvent(KEYDOWN, M);
 
@@ -87,7 +91,9 @@ describe('KeyHandler', () => {
   // of the matching criteria match.
   it.skip('prioritizes key value over code', () => {
     const handler = sinon.spy();
-    mount(<KeyHandler keyCode={M} keyValue={ARROW_LEFT} onKeyHandle={handler} />);
+    mount(
+      <KeyHandler keyCode={M} keyValue={ARROW_LEFT} onKeyHandle={handler} />,
+    );
 
     triggerKeyEvent(KEYUP, M);
 

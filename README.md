@@ -13,15 +13,15 @@ React component to handle keyboard events (such as `keyup`, `keydown` & `keypres
 
 1. [Installation](#installation)
 2. [Usage](#usage)
-	1. [Higher-order Components](#higher-order-components)
-	2. [Component](#component)
-	3. [Form key handling](#form-key-handling)
+   1. [Higher-order Components](#higher-order-components)
+   2. [Component](#component)
+   3. [Form key handling](#form-key-handling)
 3. [Key event names](#key-event-names)
 4. [`keyValue`, `code` and `keyCode`](#keyvalue-code-and-keycode)
 5. [Development](#development)
-	1. [Setup](#setup)
-	2. [Getting started](#getting-started)
-	3. [Tests](#tests)
+   1. [Setup](#setup)
+   2. [Getting started](#getting-started)
+   3. [Tests](#tests)
 6. [Contributing](#contributing)
 7. [License](#license)
 
@@ -55,17 +55,17 @@ check out [the implementation](lib/key-handler.js).
 
 ```jsx
 import React from 'react';
-import {keyHandler, KEYPRESS} from 'react-key-handler';
+import { keyHandler, KEYPRESS } from 'react-key-handler';
 
 function Demo({ keyValue }) {
   return (
     <div>
-      {keyValue === 's' &&
+      {keyValue === 's' && (
         <ol>
           <li>hello</li>
           <li>world</li>
         </ol>
-      }
+      )}
     </div>
   );
 }
@@ -75,14 +75,14 @@ export default keyHandler({ keyEventName: KEYPRESS, keyValue: 's' })(Demo);
 
 The prop types of the `KeyHandler` component are:
 
-| Name         | Type     | Required   | Default   |                                        |
-| ------------ | -------- | ---------- | --------- | -------------------------------------- |
-| keyEventName | string   | no         | `'keyup'` | `'keydown'`, `'keypress'` or `'keyup'` |
-| keyValue     | string   | yes __\*__ |           | Any given [KeyboardEvent.key]          |
-| code         | string   | yes __\*__ |           | Any given [KeyboardEvent.code]         |
-| keyCode&dagger;     | number   | yes __\*__ |           | Any given [KeyboardEvent.keyCode]      |
+| Name            | Type   | Required   | Default   |                                        |
+| --------------- | ------ | ---------- | --------- | -------------------------------------- |
+| keyEventName    | string | no         | `'keyup'` | `'keydown'`, `'keypress'` or `'keyup'` |
+| keyValue        | string | yes **\*** |           | Any given [KeyboardEvent.key]          |
+| code            | string | yes **\*** |           | Any given [KeyboardEvent.code]         |
+| keyCode&dagger; | number | yes **\*** |           | Any given [KeyboardEvent.keyCode]      |
 
-__\*__ You should pass at least one of these props.
+**\*** You should pass at least one of these props.
 
 &dagger; _Note_ that the keyCode is frequently browser specific and has therefore be set as
 deprecated, see [MDN for details](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode)
@@ -93,7 +93,7 @@ deprecated, see [MDN for details](https://developer.mozilla.org/en-US/docs/Web/A
 
 ```jsx
 import React from 'react';
-import KeyHandler, {KEYPRESS} from 'react-key-handler';
+import KeyHandler, { KEYPRESS } from 'react-key-handler';
 
 export default React.createClass({
   getInitialState() {
@@ -105,14 +105,18 @@ export default React.createClass({
 
     return (
       <div>
-        <KeyHandler keyEventName={KEYPRESS} keyValue="s" onKeyHandle={this.toggleMenu} />
+        <KeyHandler
+          keyEventName={KEYPRESS}
+          keyValue="s"
+          onKeyHandle={this.toggleMenu}
+        />
 
-        {showMenu &&
+        {showMenu && (
           <ol>
             <li>hello</li>
             <li>world</li>
           </ol>
-        }
+        )}
       </div>
     );
   },
@@ -127,15 +131,15 @@ export default React.createClass({
 
 The prop types of the `KeyHandler` component are:
 
-| Name         | Type     | Required   | Default   |                                                  |
-| ------------ | -------- | ---------- | --------- | ------------------------------------------------ |
-| keyEventName | string   | no         | `'keyup'` | `'keydown'`, `'keypress'` or `'keyup'`           |
-| keyValue     | string   | yes __\*__ |           | Any given [KeyboardEvent.key]                    |
-| code         | string   | yes __\*__ |           | Any given [KeyboardEvent.code]         |
-| keyCode&dagger;     | number   | yes __\*__ |           | Any given [KeyboardEvent.keyCode]      |
-| onKeyHandle  | function | yes        |           | Function that is called when they key is handled |
+| Name            | Type     | Required   | Default   |                                                  |
+| --------------- | -------- | ---------- | --------- | ------------------------------------------------ |
+| keyEventName    | string   | no         | `'keyup'` | `'keydown'`, `'keypress'` or `'keyup'`           |
+| keyValue        | string   | yes **\*** |           | Any given [KeyboardEvent.key]                    |
+| code            | string   | yes **\*** |           | Any given [KeyboardEvent.code]                   |
+| keyCode&dagger; | number   | yes **\*** |           | Any given [KeyboardEvent.keyCode]                |
+| onKeyHandle     | function | yes        |           | Function that is called when they key is handled |
 
-__\*__ You should pass at least one of these props.
+**\*** You should pass at least one of these props.
 
 &dagger; _Note_ that the keyCode is frequently browser specific and has therefore be set as
 deprecated, see [MDN for details](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode)
@@ -159,27 +163,27 @@ TODO: explain the differences between the different key events.
 The three available key events are
 
 - `keyValue` This corresponds to the true value. This is the value of the key pressed
-             by the user while taking into considerations the state of modifier keys
-             such as the `shiftKey` as well as the keyboard locale/layout
-- `code`     This corresponds to the physical key on the keyboard (as opposed to the
-             character generated by pressing the key). In other words, this property
-             returns a value which isn't altered by keyboard layout or the state of
-             the modifier keys. The value is a string specific to the key, e.g. 'Digit0'
-- `keyCode`  This is similar to code but numeric and also _deprecated_.
+  by the user while taking into considerations the state of modifier keys
+  such as the `shiftKey` as well as the keyboard locale/layout
+- `code` This corresponds to the physical key on the keyboard (as opposed to the
+  character generated by pressing the key). In other words, this property
+  returns a value which isn't altered by keyboard layout or the state of
+  the modifier keys. The value is a string specific to the key, e.g. 'Digit0'
+- `keyCode` This is similar to code but numeric and also _deprecated_.
 
 We recommend you to use the new Web standard [KeyboardEvent.key] or the [KeyboardEvent.code]
 over the deprecated [KeyboardEvent.keyCode].
 
-Note that in __React__ `key` is a reserved property, and thus we use `keyValue` when referring
+Note that in **React** `key` is a reserved property, and thus we use `keyValue` when referring
 to the `key` property.
 
-__Browser support:__
+**Browser support:**
 
 There's no need to worry about browser support because internally we normalize
 deprecated HTML5 `keyValue` values and translate from legacy `keyCode` values,
 similar to how React does this for their `SyntheticKeyboardEvent`.
 
-__More information:__
+**More information:**
 
 [W3C Working Draft].
 
@@ -242,8 +246,8 @@ to the [Contributor Covenant](http://contributor-covenant.org/) code of conduct.
                 ||     ||
 ```
 
-[W3C Working Draft]: https://www.w3.org/TR/DOM-Level-3-Events-key/
-[KeyboardEvent.key]: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key
-[KeyboardEvent.code]: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/code
-[KeyboardEvent.keyCode]: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode
+[w3c working draft]: https://www.w3.org/TR/DOM-Level-3-Events-key/
+[keyboardevent.key]: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key
+[keyboardevent.code]: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/code
+[keyboardevent.keycode]: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode
 [key]: https://facebook.github.io/react/docs/create-fragment.html

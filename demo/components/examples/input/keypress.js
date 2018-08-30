@@ -18,21 +18,36 @@ export default class Keypress extends React.Component<{||}, State> {
         <h2>Input onKeyPress example:</h2>
 
         <p>
-          Press <code>s</code> in the following form component to toggle the menu.
+          Press <code>s</code> in the following form component to toggle the
+          menu.
         </p>
 
         <input onKeyPress={this.handleKeyPress} />
 
-        {this.state.keyValue === 's' &&
+        {this.state.keyValue === 's' && (
           <ol>
             <li>hello</li>
             <li>world</li>
           </ol>
-        }
+        )}
 
         <h3>Code:</h3>
-        <SyntaxHighlighter language='javascript' style={light}>
-          {`state: State = { keyValue: null };
+        <SyntaxHighlighter language="javascript" style={light}>
+          {codeString}
+        </SyntaxHighlighter>
+      </ExampleBox>
+    );
+  }
+
+  handleKeyPress = ({ key }: SyntheticKeyboardEvent<HTMLInputElement>) => {
+    const keyValue = this.state.keyValue === key ? null : key;
+
+    this.setState({ keyValue });
+  };
+}
+
+const codeString = `
+state: State = { keyValue: null };
 
 render() {
   ...
@@ -44,15 +59,5 @@ handleKeyPress = ({key}: SyntheticKeyboardEvent<HTMLInputElement>) => {
   const keyValue = this.state.keyValue === key ? null : key;
 
   this.setState({ keyValue });
-};`}
-        </SyntaxHighlighter>
-      </ExampleBox>
-    );
-  }
-
-  handleKeyPress = ({key}: SyntheticKeyboardEvent<HTMLInputElement>) => {
-    const keyValue = this.state.keyValue === key ? null : key;
-
-    this.setState({ keyValue });
-  };
-}
+};
+`;
