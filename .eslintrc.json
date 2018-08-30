@@ -7,8 +7,9 @@
   },
   "extends": [
     "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:prettier/recommended"
+    "plugin:flowtype/recommended",
+    "plugin:prettier/recommended",
+    "plugin:react/recommended"
   ],
   "parser": "babel-eslint",
   "parserOptions": {
@@ -19,11 +20,10 @@
     "ecmaVersion": 6,
     "sourceType": "module"
   },
-  "plugins": ["react", "flow-vars"],
+  "plugins": ["flowtype", "react"],
   "rules": {
     "comma-dangle": ["error", "always-multiline"],
-    "flow-vars/define-flow-type": "error",
-    "flow-vars/use-flow-type": "error",
+    "flowtype/no-types-missing-file-annotation": "off",
     "indent": ["error", 2],
     "linebreak-style": ["error", "unix"],
     "quotes": ["error", "single"],
@@ -31,8 +31,8 @@
   },
   "settings": {
     "react": {
-      "version": "16.2",
-      "flowVersion": "0.79"
+      "flowVersion": "0.79",
+      "version": "16.2"
     }
   }
 }

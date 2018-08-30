@@ -41,8 +41,8 @@
   ],
   "devDependencies": {
     "babel-core": "^6.26.3",
-    "babel-eslint": "^8.2.6",
-    "babel-loader": "^7.1.5",
+    "babel-eslint": "^9.0.0",
+    "babel-loader": "^8.0.0",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.7.0",
@@ -52,9 +52,8 @@
     "chai-enzyme": "^1.0.0-beta.1",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
-    "eslint": "^4.19.1",
+    "eslint": "^5.4.0",
     "eslint-config-prettier": "^3.0.1",
-    "eslint-plugin-flow-vars": "^0.5.0",
     "eslint-plugin-prettier": "^2.6.2",
     "eslint-plugin-react": "^7.11.1",
     "flow-bin": "^0.79.1",
@@ -80,6 +79,7 @@
     "react": "^16.2.0-0"
   },
   "dependencies": {
+    "eslint-plugin-flowtype": "^2.50.0",
     "exenv": "^1.2.0",
     "prop-types": "^15.6.2"
   }
