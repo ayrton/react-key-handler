@@ -55,7 +55,7 @@ render() {
   ...
 }
 
-handleKeyPress = ({key}: SyntheticKeyboardEvent<HTMLInputElement>) => {
+handleKeyPress = ({ key }) => {
   const keyValue = this.state.keyValue === key ? null : key;
 
   this.setState({ keyValue });

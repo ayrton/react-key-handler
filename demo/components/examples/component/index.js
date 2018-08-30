@@ -39,11 +39,7 @@ export default class Component extends React.Component<{||}, State> {
 
         <h3>Code:</h3>
         <SyntaxHighlighter language="javascript" style={light}>
-          {`<KeyHandler
-  keyEventName={KEYPRESS}
-  keyValue="s"
-  onKeyHandle={this.toggleMenu}
-/>`}
+          {codeString}
         </SyntaxHighlighter>
       </ExampleBox>
     );
@@ -55,3 +51,11 @@ export default class Component extends React.Component<{||}, State> {
     this.setState({ showMenu: !this.state.showMenu });
   };
 }
+
+const codeString = `
+<KeyHandler
+  keyEventName={KEYPRESS}
+  keyValue="s"
+  onKeyHandle={this.toggleMenu}
+/>
+`;
