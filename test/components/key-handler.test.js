@@ -26,6 +26,17 @@ describe('KeyHandler', () => {
     expect(handler.calledOnce).to.equal(true);
   });
 
+  it('handles more than one key value match', () => {
+    const handler = sinon.spy();
+    mount(<KeyHandler keyValue={[ARROW_LEFT, ARROW_RIGHT]} onKeyHandle={handler} />);
+
+    triggerKeyEvent(KEYUP, undefined, ARROW_LEFT);
+    triggerKeyEvent(KEYUP, undefined, ARROW_RIGHT);
+    triggerKeyEvent(KEYUP, undefined, 's');
+
+    expect(handler.calledTwice).to.equal(true);
+  });
+
   it('handles key up events when key code match', () => {
     const handler = sinon.spy();
     mount(<KeyHandler keyCode={M} onKeyHandle={handler} />);
@@ -71,7 +82,10 @@ describe('KeyHandler', () => {
     expect(handler.calledOnce).to.equal(true);
   });
 
-  it('prioritizes key value over code', () => {
+  // This make little sense - a user will not understand that there is a priority
+  // the user wil most likely expect that the function gets called if any
+  // of the matching criteria match.
+  it.skip('prioritizes key value over code', () => {
     const handler = sinon.spy();
     mount(<KeyHandler keyCode={M} keyValue={ARROW_LEFT} onKeyHandle={handler} />);
 

@@ -1,8 +1,11 @@
 /* @flow */
 
 import React from 'react';
+import SyntaxHighlighter from 'react-syntax-highlighter/prism';
+import { light } from 'react-syntax-highlighter/styles/prism';
 
 import {keyToggleHandler, KEYPRESS} from '../../../../lib';
+import ExampleBox from '../ExampleBox';
 
 type Props = {
   keyValue: ?string,
@@ -10,7 +13,7 @@ type Props = {
 
 function Default({keyValue}: Props) {
   return (
-    <div>
+    <ExampleBox>
       <h2>Input example:</h2>
 
       <p>
@@ -26,7 +29,12 @@ function Default({keyValue}: Props) {
           <li>world</li>
         </ol>
       }
-    </div>
+      
+      <h3>Code:</h3>
+      <SyntaxHighlighter language='javascript' style={light}>
+        {'keyToggleHandler({keyEventName: KEYPRESS, keyValue: \'s\'})(Component)'}
+      </SyntaxHighlighter>
+    </ExampleBox>
   );
 }
 

@@ -6,6 +6,7 @@ import InputElementKeypress from './examples/input/keypress';
 import KeyHandlerComponent from './examples/component';
 import KeyHandlerDecorator from './examples/decorators/key-handler';
 import KeyToggleHandlerDecorator from './examples/decorators/key-toggle-handler';
+import CodeExplore from './examples/input/code-explore';
 
 /**
  * App component.
@@ -13,7 +14,7 @@ import KeyToggleHandlerDecorator from './examples/decorators/key-toggle-handler'
 
 export default function App() {
   return (
-    <div>
+    <React.Fragment>
       <h1>
         <a
           href="https://github.com/ayrton/react-key-handler"
@@ -28,6 +29,7 @@ export default function App() {
       <KeyHandlerComponent />
       <InputElement />
       <InputElementKeypress />
-    </div>
+      <CodeExplore />
+    </React.Fragment>
   );
 }
