@@ -85,7 +85,7 @@ The prop types of the `KeyHandler` component are:
 **\*** You should pass at least one of these props.
 
 &dagger; _Note_ that the keyCode is frequently browser specific and has therefore be set as
-deprecated, see [MDN for details](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode)
+deprecated, see [MDN for details](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode).
 
 [Examples](demo/components/examples/decorators/)
 
@@ -95,16 +95,14 @@ deprecated, see [MDN for details](https://developer.mozilla.org/en-US/docs/Web/A
 import React from 'react';
 import KeyHandler, { KEYPRESS } from 'react-key-handler';
 
-export default React.createClass({
-  getInitialState() {
-    return { showMenu: false };
-  },
+export default class Demo extends React.Component {
+  state = { showMenu: false };
 
   render() {
     const { showMenu } = this.state;
 
     return (
-      <div>
+      <React.Fragment>
         <KeyHandler
           keyEventName={KEYPRESS}
           keyValue="s"
@@ -117,16 +115,16 @@ export default React.createClass({
             <li>world</li>
           </ol>
         )}
-      </div>
+      </React.Fragment>
     );
   },
 
-  toggleMenu(event) {
+  toggleMenu = (event) => {
     event.preventDefault();
 
     this.setState({ showMenu: !this.state.showMenu });
-  },
-});
+  };
+}
 ```
 
 The prop types of the `KeyHandler` component are:
@@ -142,7 +140,7 @@ The prop types of the `KeyHandler` component are:
 **\*** You should pass at least one of these props.
 
 &dagger; _Note_ that the keyCode is frequently browser specific and has therefore be set as
-deprecated, see [MDN for details](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode)
+deprecated, see [MDN for details](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode).
 
 [Example](demo/components/examples/component/index.js)
 
@@ -205,10 +203,10 @@ To start the server:
 $ npm demo
 ```
 
-This starts a webpack-dev-server, which is a little node.js Express server:
+This starts a development server, which will automatically rebuild the demo app as you change files and supports hot module replacement for fast development:
 
 ```sh
-$ open http://localhost:8080
+$ open http://localhost:1234
 ```
 
 ### Tests
