@@ -1,8 +1,13 @@
+.cache/
 demo/
 lib/
 test/
 .babelrc
+.eslintignore
 .eslintrc.json
 .flowconfig
+.size-snapshot.json
 .travis.yml
-webpack*
+npm-debug.log
+rollup.config.js
+yarn-error.log
